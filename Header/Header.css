@@ -1,0 +1,244 @@
+html{
+    font-size: 16px;
+}
+
+
+body{
+    margin: 0;
+}
+
+
+/*---------------------------------------------------------------------------------------------------*/
+
+.Page-Header{
+
+    background: #003366;
+  
+    width: 100%;
+  
+    display: flex;
+  
+    flex-wrap: wrap
+}
+
+
+.IconLemon{
+
+    width: 95%;
+
+    height: 5rem;
+
+    margin: 80.5% 55% 0 50%
+}
+
+
+h1{
+
+    color: #fff;
+  
+    font-family: "Neee";
+  
+    font-weight: 700;
+  
+    font-size: 3rem;
+  
+    letter-spacing: 0.5rem;
+
+    margin-left: 4%;  
+}
+
+
+.Navigation-Bar{
+
+    display: flex;
+
+    justify-content: space-between;
+    
+    width: 40%;
+
+    margin-left: auto;
+
+    padding: 4.5% 2.5% 0 0
+}
+
+
+.navigation-bar-text{
+
+    margin-top: 2%;
+
+    font-family: "Afo";
+  
+    font-size: 1.4rem
+}
+
+
+.Links-bar-navigation{
+
+    text-decoration: none;
+
+    color: #fff
+
+}
+
+
+.navigation-bar-list{
+
+    list-style-type: none;
+
+    font-size: 1.2rem;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    font-weight: bold;
+
+    color: #fff;
+
+    position: relative;
+
+    padding: 8px
+
+}
+
+
+.navigation-bar-list::after{
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 5px;
+
+    width:  0%;
+
+    height: 4px;
+
+    background-color: #fff;
+
+    transition: width 0.3S ease
+}
+
+
+.AdministrativoItem::after{
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 35px;
+
+    width:  0%;
+
+    height: 4px;
+
+    background-color: #fff;
+
+    transition: width 0.3S ease
+}
+
+
+.navigation-bar-list:hover::after{
+
+    width: 100%
+}
+
+
+/*---------------------------------------------------------------------------------------------------*/
+
+.IconoAdmin{
+    background-image: url("../Images/Administrativos.png")
+
+}
+
+
+.IconoCatalogo{
+    background-image: url("../Images/Catalogo.png")
+
+}
+
+
+.IconoDescripcion{
+    background-image: url("../Images/Grupo.png")
+
+}
+
+
+.IconoContactos{
+    background-image: url("../Images/Contacto.png")
+
+}
+
+
+.IconoAdmin, .IconoCatalogo, .IconoDescripcion, .IconoContactos{
+
+    background-size: cover;
+
+    display: block;
+
+    width: 3rem;
+
+    height: 3rem
+}
+
+/*---------------------------------------------------------------------------------------------------*/
+
+.navigation-bar-list{
+
+    font-family: "Soft"
+}
+
+/*---------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 430px){ 
+
+    .EncabezadoPagina{
+        
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center
+    }
+
+    
+    .BarraNavegacion{
+
+        margin: 0;
+
+        margin-right:48%
+    }
+
+
+
+    main{
+
+        width: 80%
+    }
+
+    .FormularioModal{
+
+        width: 80%;
+
+        margin: auto;
+
+        margin-top: 50%
+    }
+
+    .TextoBienvenida{
+
+        margin-bottom: 8%
+    }
+
+    .IconoLimon{
+
+        display: none
+    }
+} 
+

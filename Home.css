@@ -1,0 +1,37 @@
+main{
+
+    width: 55%;
+
+    margin: auto;
+
+    margin-top: 6%;
+
+    background: #fff7f0 ;
+
+    border: #000 groove 0.5rem;
+
+    border-radius: 3rem
+}
+
+
+.Main-Text{
+
+    font-size: 1.5rem;
+
+    padding: 5%;
+
+    font-family: "Afo"
+}
+
+
+/*---------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 430px){ 
+    
+    main{
+
+        width: 80%
+    }
+
+} 
+

@@ -1,0 +1,116 @@
+.Title-Members, .Caption-Purpose-Supermarket{
+    
+    text-align: center;
+
+    font-weight: 900;
+
+    color: #000;
+
+    font-size: 4rem;
+}
+
+
+.Encapsulated-Page{
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center
+}
+
+
+.Encapsulated-Members, .Encapsulated-Purpose-Supermarket{
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: space-evenly
+}
+
+
+.Contents-Encapsulated{
+
+    width: 18%;
+    
+    text-align: center;
+
+    margin-bottom: 3%;
+
+    background: #f8f9f9 ;
+
+    padding: 2%;
+
+    border: 8px #e2e7ec groove;
+
+    border-radius: 1.1rem;
+
+    transition: transform 1.5s ease;
+}
+
+
+.Contents-Encapsulated:hover{
+
+    background: #fff;
+
+    transform: scale(1.05) ;
+}
+
+
+.Photos{
+
+    width: 10.5rem;
+
+    height: 10.5rem;
+
+    border-radius: 25%;
+
+    box-shadow: 0 0 0.5rem #abb2b9
+}
+
+
+span{
+
+    color: #abb2b9;
+
+    font-size: 1.3rem;
+
+    margin-top: 10%;
+
+    display: block;
+}
+
+
+p{
+
+    font-size: 1.2rem
+}
+
+
+p, span, h2, .Caption-Contents-Purpose, .Title-Members{
+
+    font-family: "Afo"
+}
+
+
+.Caption-Contents-Purpose{
+
+    font-size: 3rem;
+
+    color: #000
+}
+/*---------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 430px){ 
+
+    .Encapsulado{
+        
+        width: 75%;
+
+        margin-bottom: 15%
+    }
+} 
+
+/*---------------------------------------------------------------------------------------------------*/
+
