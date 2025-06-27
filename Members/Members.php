@@ -118,18 +118,17 @@
 
                     <h2 class="Caption-Contents-Purpose"> Visión </h2>
 
-                    <p> Ser el minimarket preferido en la zona, reconocido por nuestra calidad, compromiso y cercanía con las personas. Nos proyectamos como un negocio en constante crecimiento, adaptándonos a las necesidades de nuestros clientes y expandiendo nuestra oferta para seguir siendo su mejor opción en las compras del día a día.
-                    </p>
+                    <p> Ser el minimarket preferido en la zona, reconocido por nuestra calidad, compromiso y cercanía con las personas. Nos proyectamos como un negocio en constante crecimiento, adaptándonos a las necesidades de nuestros clientes y expandiendo nuestra oferta para seguir siendo su mejor opción en las compras del día a día. </p>
 
                 </article>
 
             </div>
 
-        <section>
+        </section>
 
     </main> 
 
-    <!--Pie de Pagina Incluido con PHP-->
+    <!--Pie de Página Incluida con PHP-->
     <?php include '../FooterPage/FooterPage.php' ?>
 
 </body>

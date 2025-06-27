@@ -40,19 +40,19 @@ body{
 
     font-size: 1.8rem;
 
-    margin-top: 3.6rem
+    margin-top: 3.6rem;
 }
 
 
-.Paragraph{
+.Paragraph, li{
 
-    font-size: 1.3rem
+    font-size: 1.3rem;
 }
 
 
 /*-----------------------------------------------------------------------------------------------------------*/
 
-.Paragraph, .Subtitle, .Main-Title{
+.Paragraph, .Subtitle, .Main-Title, li{
 
     font-family: "Afo"
 }

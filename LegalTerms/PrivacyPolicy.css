@@ -28,21 +28,26 @@ body{
 }
 
 
+.Main-Title{
+
+    font-size: 3rem;
+
+    text-shadow: 0 0 0.1rem #000
+}
+
 .Caption{
 
     font-size: 1.5rem;
 
     margin-bottom: 0.6rem;
 
-    margin-top: 0.6rem
+    margin-top: 3.8rem
 }
 
 
 .Paragraph{
 
-    font-size: 1.3rem;
-
-    
+    font-size: 1.3rem
 }
 
 

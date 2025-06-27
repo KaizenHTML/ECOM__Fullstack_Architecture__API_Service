@@ -4,13 +4,13 @@ main{
 
     margin: auto;
 
-    margin-top: 6%;
+    margin-top: 8%;
 
     background: #fff7f0 ;
 
-    border: #000 groove 0.5rem;
+    border: #000 solid 0.4rem;
 
-    border-radius: 3rem
+    border-radius: 2.5rem
 }
 
 

@@ -3,17 +3,17 @@
 <nav class="Page-Header"> 
 
     <a href="../../MarketMallorca/index.php">
-        <img src="../../MarketMallorca/Images/lime.png" alt="Logo del Market Mallorca" class="IconLemon" title="Vuelve al Inicio de la Página">
+        <img src="../../MarketMallorca/Images/Lime.png" alt="Logo del Market Mallorca" class="IconLemon" title="Vuelve al Inicio de la Página">
     </a>
   
     <!--Título-->
-    <h1> MARKET <br> MALLORCA </h1>
+    <h1 class="Title-Header"> MARKET <br> MALLORCA </h1>
 
     <!--Barra de Navegación-->
     <div class="Navigation-Bar"> 
         
         <li class="navigation-bar-list AdministrativoItem" id="EnlaceAdmin" > <span class="IconoAdmin"></span> <samp class="navigation-bar-text"> Mi Cuenta </samp> </li>
-            
+
         <a href="../../MarketMallorca/Catalogo/Catalogo.php" class="Links-bar-navigation">
             <li class="navigation-bar-list"> <span class="IconoCatalogo"></span> <samp class="navigation-bar-text"> Catálogo </samp> </li>  
         </a>

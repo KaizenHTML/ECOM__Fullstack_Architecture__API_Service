@@ -32,8 +32,9 @@
     <main class="Encapsulated-page">
 
         <!--Google Maps-->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.962158103609!2d-75.1741804!3d4.4181529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38c5bbfc179a99%3A0x49e655d010036745!2sMarket%20Mallorca!5e0!3m2!1ses!2sco!4v1746377840999!5m2!1ses!2sco"  loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="Maps">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1406.4222000636667!2d-75.17515601142806!3d4.4180519732160395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38c5491adbccb7%3A0x6a4408ec84562319!2sCalle%2098%20%2314b-80%20sur%2C%20Ibagu%C3%A9%2C%20Tolima!5e0!3m2!1ses-419!2sco!4v1750969529047!5m2!1ses-419!2sco" class="Maps" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
+
 
         <!--Encapsulado Pequeño-->
         <div class="Encapsulated-Small">
@@ -60,13 +61,13 @@
 
                 <div class="Encapsulated-Logos-Payments">
 
-                    <img src="../Images/bancolombia.png" class="Logos-Payments">
+                    <img src="../Images/Bancolombia.png"  alt="Logo Bancolombia" class="Logos-Payments">
 
-                    <img src="../Images/nequi.png" class="Logos-Payments">
+                    <img src="../Images/Nequi.png" alt="Logo Nequi" class="Logos-Payments">
 
-                    <img src="../Images/banco_popular.png" class="Logos-Payments">
+                    <img src="../Images/BancoPopular.png" alt="Logo Banco Popular" class="Logos-Payments">
 
-                    <img src="../Images/banco_occidente.png" class="Logos-Payments">
+                    <img src="../Images/BancoOccidente.png" alt="Logo Banco Occidente" class="Logos-Payments">
 
                 </div>
 
@@ -77,7 +78,7 @@
     </main> 
 
 
-    <!--Pie de Página Incluido con PHP-->
+    <!--Pie de Página Incluida con PHP-->
     <?php include '../FooterPage/FooterPage.php' ?>
 
 </body>
