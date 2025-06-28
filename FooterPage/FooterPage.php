@@ -7,15 +7,15 @@
 
         <ul>
             <li class="List-Legal-Terms">
-                <a href="../MarketMallorca/LegalTerms/PrivacyPolicy.html" class="Link-Legal-Terms"> Política de Privacidad </a>
+                <a href="../../MarketMallorca/LegalTerms/PrivacyPolicy.html" class="Link-Legal-Terms"> Política de Privacidad </a>
             </li>
 
             <li class="List-Legal-Terms">
-                <a href="../MarketMallorca/LegalTerms/About.html" class="Link-Legal-Terms"> Acerca De </a>
+                <a href="../../MarketMallorca/LegalTerms/About.html" class="Link-Legal-Terms"> Acerca De </a>
             </li>
 
             <li class="List-Legal-Terms">
-                <a href="../MarketMallorca/LegalTerms/Terms.html" class="Link-Legal-Terms"> Términos y Condiciones </a>
+                <a href="../../MarketMallorca/LegalTerms/Terms.html" class="Link-Legal-Terms"> Términos y Condiciones </a>
             </li>
         </ul>
         
