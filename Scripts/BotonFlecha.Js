@@ -1,12 +1,12 @@
 
-// Escuchador Eventos
-document.addEventListener('DOMContentLoaded', function(){
+// Eventos
+document.addEventListener('DOMContentLoaded', () => {
 
   const BotonFlecha = document.getElementById('BotonFlecha');
 
 
-  // Escuchador Eventos
-  window.addEventListener('scroll', function(){
+  // Eventos
+  window.addEventListener('scroll', () => {
 
     // Cuenta los números de pixeles
     if (window.scrollY > 580){ 
@@ -20,13 +20,12 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 
 
-  // Escuchador Eventos
-  BotonFlecha.addEventListener('click', function(){
+  // Eventos
+  BotonFlecha.addEventListener('click', () => {
 
-    // Se desplaza a una posición
     window.scrollTo({
       top: 0,
-      behavior: 'smooth' // Realiza un desplazamiento suave
+      behavior: 'smooth' // Hará un desplazamiento suave
 
     });
   });

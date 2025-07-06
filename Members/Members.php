@@ -3,7 +3,7 @@
 
 <head> <!--Encabezado-->
 
-    <title> ¿Quiénes Somos? </title>
+    <title> ¿Quiénes Somos? | Market Mallorca </title>
     
     <meta charset="UTF-8"> 
 
@@ -43,7 +43,7 @@
 
                     <img src="../Images/Propietarios.jpeg" class="Photos">
 
-                    <span> Propietarios </span>
+                    <span class="Position"> Propietarios </span>
 
                     <h2> Sthepania Ariza y Juan Pablo Cardona </h2>
 
@@ -56,7 +56,7 @@
 
                     <img src="../Images/Ana.jpeg" class="Photos">
 
-                    <span> Administradora </span>
+                    <span class="Position"> Administradora </span>
 
                     <h2> Ana Caleño </h2>
 
@@ -69,7 +69,7 @@
 
                     <img src="../Images/Gloria.jpeg" class="Photos">
 
-                    <span> Coordinadora </span>
+                    <span class="Position"> Coordinadora </span>
 
                     <h2> Gloria Loaiza </h2>
 
@@ -82,7 +82,7 @@
 
                     <img src="../Images/Equipo.jpeg" class="Photos">
 
-                    <span> Cajeros y domiciliarios </span>
+                    <span class="Position"> Cajeros y domiciliarios </span>
 
                     <h2> Equipo de Trabajo </h2>
 

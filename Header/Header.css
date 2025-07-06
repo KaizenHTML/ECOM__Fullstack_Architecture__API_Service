@@ -44,7 +44,7 @@ body{
   
     letter-spacing: 0.5rem;
 
-    margin-left: 4%;  
+    margin-left: 4%; 
 }
 
 
@@ -76,9 +76,7 @@ body{
 
     text-decoration: none;
 
-    color: #fff
-
-}
+ }
 
 
 .navigation-bar-list{
@@ -113,26 +111,6 @@ body{
     left: 0;
 
     bottom: 5px;
-
-    width:  0%;
-
-    height: 4px;
-
-    background-color: #fff;
-
-    transition: width 0.3S ease
-}
-
-
-.AdministrativoItem::after{
-
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-
-    bottom: 35px;
 
     width:  0%;
 
@@ -211,30 +189,4 @@ body{
         margin-right:48%
     }
 
-
-
-    main{
-
-        width: 80%
-    }
-
-    .FormularioModal{
-
-        width: 80%;
-
-        margin: auto;
-
-        margin-top: 50%
-    }
-
-    .TextoBienvenida{
-
-        margin-bottom: 8%
-    }
-
-    .IconoLimon{
-
-        display: none
-    }
-} 
-
+}

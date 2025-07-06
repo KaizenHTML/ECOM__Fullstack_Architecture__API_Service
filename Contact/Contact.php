@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="es-co"> <!--Idioma-->
 
-<head> <!--Encabezado-->
+<head> <!--Encabezado Página-->
 
-    <title> Contáctanos </title>
+    <title> Contáctanos | Market Mallorca </title>
 
     <meta charset="UTF-8">
 

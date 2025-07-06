@@ -6,13 +6,31 @@
         <img src="../../MarketMallorca/Images/Lime.png" alt="Logo del Market Mallorca" class="IconLemon" title="Vuelve al Inicio de la Página">
     </a>
   
-    <!--Título-->
-    <h1 class="Title-Header"> MARKET <br> MALLORCA </h1>
+    <!--Nombre Página-->
+    <h1 class="Title-Header"> 
+        <span class="Letter-Tittle">M</span>
+        <span class="Letter-Tittle">A</span>
+        <span class="Letter-Tittle">R</span>
+        <SPan class="Letter-Tittle">K</SPan>
+        <span class="Letter-Tittle">E</span>
+        <span class="Letter-Tittle">T</span> 
+        <br> 
+        <span class="Letter-Tittle">M</span>
+        <span class="Letter-Tittle">A</span>
+        <span class="Letter-Tittle">L</span>
+        <span class="Letter-Tittle">L</span>
+        <span class="Letter-Tittle">O</span>
+        <span class="Letter-Tittle">R</span>
+        <span class="Letter-Tittle">C</span>
+        <span class="Letter-Tittle">A</span>
+    </h1>
 
     <!--Barra de Navegación-->
     <div class="Navigation-Bar"> 
         
-        <li class="navigation-bar-list AdministrativoItem" id="EnlaceAdmin" > <span class="IconoAdmin"></span> <samp class="navigation-bar-text"> Mi Cuenta </samp> </li>
+        <a href="/MarketMallorca/ComponentLoginBuild/Login.html" class="Links-bar-navigation">
+            <li class="navigation-bar-list" > <span class="IconoAdmin"></span> <samp class="navigation-bar-text"> Mi Cuenta </samp> </li>
+        </a>
 
         <a href="../../MarketMallorca/Catalogo/Catalogo.php" class="Links-bar-navigation">
             <li class="navigation-bar-list"> <span class="IconoCatalogo"></span> <samp class="navigation-bar-text"> Catálogo </samp> </li>  

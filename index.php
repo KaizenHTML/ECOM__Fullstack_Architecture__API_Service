@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="es-co"> <!--Idioma-->
 
-<head> <!--Encabezado-->
+<head> <!--Encabezado Página-->
 
-    <title> Market Mallorca </title>
+    <title> Inicio | Market Mallorca </title>
 
     <meta charset="UTF-8"> 
 
@@ -29,7 +29,7 @@
 
 
     <main> 
-        <p class="Main-Text"> Bienvenidos a <strong> Market Mallorca </strong>. En esta nueva página encontrarán todo lo necesario para conocernos y así tener un mayor acercamiento con ustedes, puesto que son la prioridad en el día a día de nuestro trabajo. Aquí podrán ver nuestro catálogo de productos, realizar pedidos, conocer quiénes somos y nuestros objetivos como empresa, así como los diferentes medios para contactarnos y llegar a nosotros. </p>
+        <p class="Main-Text"> Bienvenidos a <strong> Market Mallorca</strong>. En esta nueva página encontrarán todo lo necesario para conocernos y así tener un mayor acercamiento con ustedes, puesto que son la prioridad en el día a día de nuestro trabajo. Aquí podrán ver nuestro catálogo de productos, realizar pedidos, conocer quiénes somos y nuestros objetivos como empresa, así como los diferentes medios para contactarnos y llegar a nosotros. </p>
     </main>
 
 
