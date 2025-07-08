@@ -2,7 +2,7 @@
 
     display: flex;
 
-    flex-wrap: wrap
+    flex-wrap: wrap;
 }
 
 
@@ -20,13 +20,13 @@
 
 .Encapsulated-Small{
 
-    margin-top:3%;
-
     width: 42%;
 
     display: flex;
 
-    flex-direction: column
+    flex-direction: column;
+
+    margin-top: 3%;
 }
 
 
@@ -38,19 +38,23 @@
 
     height: 10rem;
     
-    margin-bottom: 5%
+    margin-bottom: 5%;
 
+    font-family: "Afo";
+
+    padding: 3%
 }
+
 
 h3{
 
     margin: 0;
 
-    margin-bottom: 4%;
+    margin-bottom: 5%;
 
     font-size: 1.5rem;
 
-    text-align: center;
+    text-align: center
 }
 
 
@@ -90,48 +94,11 @@ ul li:nth-child(4)::marker{
 
     width: 15%;
 
-    border-radius: 30%;
+    border-radius: 30%
 }
 
-/*---------------------------------------------------------------------------------------------------*/
-
-
-.Encapsulated-Contacts, .Encapsulated-Methods{
-
-    font-family: "Afo";
-
-    padding: 3%
-}
 
 .Logos-Payments:hover{
 
     box-shadow: 0 0 0.3rem #000
 }
-
-/*---------------------------------------------------------------------------------------------------*/
-
-@media screen and (max-width: 430px) { 
-
-    .Maps{
-
-        width: 110%;
-
-        height: 20rem
-    }
-
-    .Encapsulated-Small{
-
-        width: 95%;
-
-        margin: 3%
-
-    }
-
-    .Encapsulated-Contacts{
-
-        height: 12rem;
-
-        margin-top: 20%
-
-    }
-} 

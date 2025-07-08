@@ -18,6 +18,13 @@
     <link rel="stylesheet" href="../Fonts/Fonts.css"> <!--Tipografias-->
 
     <link rel="icon" href="../Images/Grupo.png"> <!--Icono-->
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script> <!--Enlace Gsap-->
+
+    <Script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></Script> <!--Enlace SplitText-->
+    
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script> <!--Enlace ScrollTrigger-->
+
   
 </head>
 
@@ -99,7 +106,7 @@
         
         <!--Sección de Propósito-->
         <section>
-
+            
             <h2 class="Caption-Purpose-Supermarket"> Razón de ser </h2>
 
             <div class="Encapsulated-Purpose-Supermarket">
@@ -130,6 +137,10 @@
 
     <!--Pie de Página Incluida con PHP-->
     <?php include '../FooterPage/FooterPage.php' ?>
+
+
+    <!--Scripts-->
+    <script src="../Scripts/Tween-Members.js"></script>
 
 </body>
 

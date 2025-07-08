@@ -1,12 +1,7 @@
-.Title-Members, .Caption-Purpose-Supermarket{
-    
-    text-align: center;
 
-    font-weight: 900;
+body{
 
-    color: #000;
-
-    font-size: 6rem;
+    font-family: "Afo"
 }
 
 
@@ -20,11 +15,19 @@
 }
 
 
+.Title-Members, .Caption-Purpose-Supermarket{
+    
+    text-align: center;
+
+    color: #000;
+
+    font-size: 6rem
+}
+
+
 .Encapsulated-Members, .Encapsulated-Purpose-Supermarket{
 
     display: flex;
-
-    flex-wrap: wrap;
 
     justify-content: space-evenly
 }
@@ -88,29 +91,8 @@ p{
 }
 
 
-p, span, h2, .Caption-Contents-Purpose, .Title-Members{
-
-    font-family: "Afo"
-}
-
-
 .Caption-Contents-Purpose{
 
     font-size: 3rem;
 
-    color: #000
 }
-/*---------------------------------------------------------------------------------------------------*/
-
-@media screen and (max-width: 430px){ 
-
-    .Encapsulado{
-        
-        width: 75%;
-
-        margin-bottom: 15%
-    }
-} 
-
-/*---------------------------------------------------------------------------------------------------*/
-

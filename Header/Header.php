@@ -7,23 +7,7 @@
     </a>
   
     <!--Nombre Página-->
-    <h1 class="Title-Header"> 
-        <span class="Letter-Tittle">M</span>
-        <span class="Letter-Tittle">A</span>
-        <span class="Letter-Tittle">R</span>
-        <SPan class="Letter-Tittle">K</SPan>
-        <span class="Letter-Tittle">E</span>
-        <span class="Letter-Tittle">T</span> 
-        <br> 
-        <span class="Letter-Tittle">M</span>
-        <span class="Letter-Tittle">A</span>
-        <span class="Letter-Tittle">L</span>
-        <span class="Letter-Tittle">L</span>
-        <span class="Letter-Tittle">O</span>
-        <span class="Letter-Tittle">R</span>
-        <span class="Letter-Tittle">C</span>
-        <span class="Letter-Tittle">A</span>
-    </h1>
+    <h1 class="Title-Header"> MARKET <br> MALLORCA </h1>
 
     <!--Barra de Navegación-->
     <div class="Navigation-Bar"> 

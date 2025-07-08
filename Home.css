@@ -4,13 +4,11 @@ main{
 
     margin: auto;
 
-    margin-top: 8%;
-
     background: #fff7f0 ;
 
     border: #000 solid 0.4rem;
 
-    border-radius: 2.5rem
+    border-radius: 2rem
 }
 
 
@@ -22,16 +20,3 @@ main{
 
     font-family: "Afo"
 }
-
-
-/*---------------------------------------------------------------------------------------------------*/
-
-@media screen and (max-width: 430px){ 
-    
-    main{
-
-        width: 80%
-    }
-
-} 
-

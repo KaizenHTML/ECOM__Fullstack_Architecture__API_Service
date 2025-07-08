@@ -28,7 +28,7 @@
     <?php include '../Header/Header.php'; ?>
 
 
-    <!--Encapsulado Página-->
+    <!--Encapsulado de Página-->
     <main class="Encapsulated-page">
 
         <!--Google Maps-->
