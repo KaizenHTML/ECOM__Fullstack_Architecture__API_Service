@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="es-co"> <!--Idioma-->
+<html lang="es-co"> 
 
-<head> <!--Encabezado-->
+<head> <!--Encabezado de Página-->
 
     <title> ¿Quiénes Somos? | Market Mallorca </title>
     
@@ -25,34 +25,42 @@
     
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script> <!--Enlace ScrollTrigger-->
 
-  
+    <link rel="canonical" href="https://marketmallorca/Members/Members.php"> <!--Enlace Canónico-->
+
+    <meta name="description" content="Conoce la misión, visión y el equipo detrás de Market Mallorca. Descubre nuestros valores y compromiso con la comunidad."> <!--Descripción-->
+
+    <meta property="og:title" content="¿Quiénes Somos? | Market Mallorca">  <!--Enlace Titulo-->
+
+    <meta property="og:url" content="https://marketmallorca/Members/Members.php"> <!--Enlace URL-->
+    
+    <meta property="og:type" content="website"> <!--Enlace Tipo-->
+
 </head>
 
 
 <body> 
 
-    <!--Encabezado Incluido con PHP-->
+    <!--Barra de Navegación-->
     <?php include '../Header/Header.php'; ?>
     
 
     <!--Encapsulado Página-->
     <main class="Encapsulated-Page">
 
-        <!--Sección de Miembros-->
-        <section> 
+        <section> <!--Sección de Miembros-->
             
-            <h1 class="Title-Members"> Integrantes </h1>
+            <h2 class="Title-Members"> Miembros </h2>
     
             <!--Encasulado Miembros-->
             <div class="Encapsulated-Members"> 
 
                 <article class="Contents-Encapsulated">
 
-                    <img src="../Images/Propietarios.jpeg" class="Photos">
+                    <img src="../Images/Propietarios.jpeg" class="Photos" alt="Foto de los Propietarios">
 
                     <span class="Position"> Propietarios </span>
 
-                    <h2> Sthepania Ariza y Juan Pablo Cardona </h2>
+                    <h2> Sthepania Ariza y Juan Pablo </h2>
 
                     <p> Ambos lideran el market, asegurándose de que cada área funcione correctamente. Juntos, toman decisiones estratégicas y supervisan la calidad del servicio, garantizando una experiencia óptima para los clientes.</p>
 
@@ -61,7 +69,7 @@
 
                 <article class="Contents-Encapsulated">
 
-                    <img src="../Images/Ana.jpeg" class="Photos">
+                    <img src="../Images/Ana.jpeg" class="Photos" alt="Foto de la Administradora">
 
                     <span class="Position"> Administradora </span>
 
@@ -74,20 +82,20 @@
 
                 <article class="Contents-Encapsulated">
 
-                    <img src="../Images/Gloria.jpeg" class="Photos">
+                    <img src="../Images/Gloria.jpeg" class="Photos" alt="Foto de la coordinadora">
 
                     <span class="Position"> Coordinadora </span>
 
                     <h2> Gloria Loaiza </h2>
 
-                    <p> Se encarga de coordinar y gestionar las operaciones del market. Supervisa al equipo, administra inventarios y compras, y se asegura de que todo funcione eficientemente para ofrecer un servicio de calidad a los clientes. </p>
+                    <p> Es la figura que garantiza la eficiencia de todas las operaciones diarias, desde la gestión de pedidos hasta la coordinación de entregas y la optimización de la experiencia del cliente. Su rol es clave para mantener la promesa de calidad y servicio que define a Market Mallorca. </p>
 
                 </article>
 
 
                 <article class="Contents-Encapsulated">
 
-                    <img src="../Images/Equipo.jpeg" class="Photos">
+                    <img src="../Images/Equipo.jpeg" class="Photos" alt="Foto del Equipo de Trabajo">
 
                     <span class="Position"> Cajeros y domiciliarios </span>
 
@@ -104,8 +112,7 @@
         </section>
             
         
-        <!--Sección de Propósito-->
-        <section>
+        <section> <!--Sección de Propósito-->
             
             <h2 class="Caption-Purpose-Supermarket"> Razón de ser </h2>
 
@@ -119,6 +126,7 @@
                     <p> Ofrecer productos de calidad y atención cercana a nuestros clientes, garantizando una experiencia de compra ágil, accesible y confiable. Trabajamos día a día para ser el punto de referencia en la comunidad, brindando variedad, buenos precios y un servicio amable que haga sentir a cada cliente como en casa. </p>
 
                 </article>
+
 
                 <!--Encapsulado Visión-->
                 <article class="Contents-Encapsulated"> 
@@ -139,7 +147,7 @@
     <?php include '../FooterPage/FooterPage.php' ?>
 
 
-    <!--Scripts-->
+    <!--Script-->
     <script src="../Scripts/Tween-Members.js"></script>
 
 </body>

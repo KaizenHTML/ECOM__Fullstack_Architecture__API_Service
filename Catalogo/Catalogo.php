@@ -11,11 +11,11 @@
 
     <link rel="stylesheet" href="Catalogo.css"> <!--CSS-->
 
-    <link rel="stylesheet" href="../Encabezado/Encabezado.css"> <!--Css de Encabezado-->
+    <link rel="stylesheet" href="../Header/Header.css"> <!--Css de Encabezado-->
 
-    <link rel="stylesheet" href="../PiePagina/PiePagina.css"> <!--Css Pie de Página-->
+    <link rel="stylesheet" href="../FooterPage/FooterPage.css"> <!--Css Pie de Página-->
         
-    <link rel="stylesheet" href="../Tipografias/Tipografias.css"> <!--Tipografias-->
+    <link rel="stylesheet" href="../Fonts/Fonts.css"> <!--Tipografias-->
         
     <link rel="icon" href="../Imagenes/Catalogo.png"> <!--Icono Pagina-->
 
@@ -27,7 +27,7 @@
 <body> <!--Cuerpo-->
 
     <!--Encabezado Incluido con PHP-->
-    <?php include '../Encabezado/Encabezado.php'; ?>
+    <?php include '../Header/Header.php'; ?>
 
 
     <!--Ventana Modal Datos-->
@@ -108,7 +108,7 @@
 
 
     <!--Pie de Página Incluida con PHP-->
-    <?php include '../PiePagina/PiePagina.php' ?>
+    <?php include '../FooterPage/FooterPage.php' ?>
 
 
     <!--JavaScript-->

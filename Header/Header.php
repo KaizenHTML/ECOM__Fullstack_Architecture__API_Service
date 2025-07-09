@@ -1,12 +1,13 @@
 
-<!--Encabezado Página-->
+<!--Encabezado de Página-->
 <nav class="Page-Header"> 
 
+    <!--Logo-->
     <a href="../../MarketMallorca/index.php">
-        <img src="../../MarketMallorca/Images/Lime.png" alt="Logo del Market Mallorca" class="IconLemon" title="Vuelve al Inicio de la Página">
+        <img src="../../MarketMallorca/Images/Lime.png" alt="Logo del Market Mallorca" class="IconLemon">
     </a>
   
-    <!--Nombre Página-->
+    <!--Nombre de Página-->
     <h1 class="Title-Header"> MARKET <br> MALLORCA </h1>
 
     <!--Barra de Navegación-->

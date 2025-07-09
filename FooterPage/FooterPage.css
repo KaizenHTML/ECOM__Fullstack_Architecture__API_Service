@@ -1,6 +1,7 @@
 body{
 
     font-family: "Afo"; 
+
 }
 
 .Footer-Page{
@@ -25,7 +26,7 @@ body{
 
 .Phrase-Footer-Page{
 
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 
     text-align: center;
 
@@ -60,6 +61,14 @@ body{
 .List-Legal-Terms:nth-last-child(1){
 
     width: 15.2%
+}
+
+
+.Opening-Hours{
+
+    color: #abb2b9;
+
+    font-size: 1.3rem;
 }
 
 

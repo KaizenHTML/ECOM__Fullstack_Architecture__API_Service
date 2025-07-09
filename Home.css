@@ -4,9 +4,9 @@ main{
 
     margin: auto;
 
-    background: #fff7f0 ;
+    background: #f8f9f9;
 
-    border: #000 solid 0.4rem;
+    border: groove #e2e7ec 0.5rem;
 
     border-radius: 2rem
 }

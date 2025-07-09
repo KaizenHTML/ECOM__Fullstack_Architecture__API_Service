@@ -5,6 +5,7 @@
 
         <p class="Phrase-Footer-Page"> © 2025 OC Software - Corporation. Todos los derechos reservados. </p>
 
+        
         <ul>
             <li class="List-Legal-Terms">
                 <a href="../../MarketMallorca/LegalTerms/PrivacyPolicy.html" class="Link-Legal-Terms"> Política de Privacidad </a>
@@ -18,6 +19,8 @@
                 <a href="../../MarketMallorca/LegalTerms/Terms.html" class="Link-Legal-Terms"> Términos y Condiciones </a>
             </li>
         </ul>
+
+        <p class="Opening-Hours"> Lunes a sábado de 7am a 10pm </p>
         
     </div>
 

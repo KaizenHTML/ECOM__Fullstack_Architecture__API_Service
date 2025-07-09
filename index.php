@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es-co"> <!--Idioma-->
+<html lang="es-co"> 
 
 <head> <!--Encabezado Página-->
 
@@ -23,12 +23,24 @@
 
     <Script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></Script> <!--Enlace SplitText-->
 
+    <link rel="canonical" href="https://www.marketmallorca.com/index.php"> <!--URL Canonica-->
+
+    <meta name="description" content="Bienvenido a Market Mallorca. Conoce nuestra misión y visión, descubre nuestro catálogo de productos, realiza pedidos y contáctanos para tus compras en Ibagué."> <!--Descripción-->
+
+    <meta property="og:title" content="Inicio | Market Mallorca"> <!--Titulo Enlace-->
+
+    <meta property="og:description" content="Encuentra los mejores productos y ofertas en Market Mallorca. ¡Tu experiencia de compra ágil y confiable está aquí!"> <!--Descripción Enlace-->
+
+    <meta property="og:url" content="https://www.marketmallorca.com/index.php"> <!--URL Enlace-->
+
+    <meta property="og:type" content="website"> <!--Tipo Enlace-->
+
 </head>
 
 
 <body> 
 
-    <!--Encabezado Incluido con PHP-->
+    <!--Barra de navegación-->
     <?php include './Header/Header.php'; ?>
 
 
@@ -37,7 +49,7 @@
     </main>
 
 
-    <!--Pie de Página Incluida con PHP-->
+    <!--Pie de Página-->
     <?php include './FooterPage/FooterPage.php' ?>
 
 

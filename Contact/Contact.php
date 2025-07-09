@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="es-co"> <!--Idioma-->
+<html lang="es-co"> 
 
-<head> <!--Encabezado Página-->
+<head> <!--Encabezado de Página-->
 
     <title> Contáctanos | Market Mallorca </title>
 
@@ -19,12 +19,24 @@
 
     <link rel="icon" href="../Images/Contacto.png"> <!--Icono-->
 
+    <meta name="description" content="Contacta con Market Mallorca para consultas, soporte o feedback. Encuentra nuestra dirección, teléfono y formulario de contacto."> <!--Descripción-->
+
+    <link rel="canonical" href="https://www.marketmallorca.com/Contact/Contact.php"> <!--URL Canonica-->
+
+    <meta property="og:title" content="Contáctanos | Market Mallorca"> <!--Titulo Enlace-->
+
+    <meta property="og:description" content="¿Tienes preguntas, sugerencias o necesitas ayuda? Contáctanos en Market Mallorca."> <!--Descripción Enlace-->
+
+    <meta property="og:url" content="https://www.marketmallorca.com/Contact/Contact.php"> <!--URL Enlace-->
+
+    <meta property="og:type" content="website"> <!--Tipo Enlace-->
+
 </head>
 
 
 <body> 
 
-    <!--Encabezado Incluido con PHP-->
+    <!--Barra de navegación-->
     <?php include '../Header/Header.php'; ?>
 
 
@@ -54,10 +66,10 @@
             </section>
 
 
-            <!--Encapsulado Métodos de Pagos-->
+            <!--Encapsulado Métodos de Pago-->
             <section class="Encapsulated-Methods">
 
-                <h3> Métodos de Pago </h3>
+                <h3 class="Title-Methods"> Métodos de Pago </h3>
 
                 <div class="Encapsulated-Logos-Payments">
 
@@ -65,9 +77,9 @@
 
                     <img src="../Images/Nequi.png" alt="Logo Nequi" class="Logos-Payments">
 
-                    <img src="../Images/BancoPopular.png" alt="Logo Banco Popular" class="Logos-Payments">
+                    <img src="../Images/daviplata-seeklogo.png" alt="Logo Banco Popular" class="Logos-Payments">
 
-                    <img src="../Images/BancoOccidente.png" alt="Logo Banco Occidente" class="Logos-Payments">
+                    <img src="../Images/Davivienda.jpg" alt="Logo Banco Occidente" class="Logos-Payments">
 
                 </div>
 

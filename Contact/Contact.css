@@ -50,11 +50,15 @@ h3{
 
     margin: 0;
 
-    margin-bottom: 5%;
-
     font-size: 1.5rem;
 
     text-align: center
+}
+
+
+.Title-Methods{
+
+    margin-bottom: 5%;
 }
 
 
@@ -94,7 +98,7 @@ ul li:nth-child(4)::marker{
 
     width: 15%;
 
-    border-radius: 30%
+    border-radius: 20%
 }
 
 
