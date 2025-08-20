@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es-co"> 
 
-<head> <!--Encabezado Página-->
+<head> 
 
     <title> Inicio | Market Mallorca </title>
 
@@ -9,7 +9,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="Home.css"> <!--CSS Central-->
+    <link rel="stylesheet" href="index.css"> <!--CSS Central-->
 
     <link rel="stylesheet" href="./Header/Header.css"> <!--CSS Encabezado-->
 
@@ -35,6 +35,8 @@
 
     <meta property="og:type" content="website"> <!--Tipo Enlace-->
 
+    <link rel="stylesheet" crossorigin href="/MarketMallorca/React/assets/index-IwfBJDm0.css">
+
 </head>
 
 
@@ -44,18 +46,20 @@
     <?php include './Header/Header.php'; ?>
 
 
-    <main> 
-        <p class="Main-Text"> Bienvenidos a <strong> Market Mallorca. </strong> En esta nueva página encontrarán todo lo necesario para conocernos y así tener un mayor acercamiento con ustedes, puesto que son la prioridad en el día a día de nuestro trabajo. Aquí podrán ver nuestro catálogo de productos, realizar pedidos, conocer quiénes somos y nuestros objetivos como empresa, así como los diferentes medios para contactarnos y llegar a nosotros.</p>
+    <main>
+
+        <p class="Text"> Bienvenidos a <strong> Market Mallorca. </strong> En esta nueva página encontrarán todo lo necesario para conocernos y así tener un mayor acercamiento con ustedes, puesto que son la prioridad en el día a día de nuestro trabajo. Aquí podrán ver nuestro catálogo de productos, realizar pedidos, conocer quiénes somos y nuestros objetivos como empresa, así como los diferentes medios para contactarnos y llegar a nosotros. </p>
+
     </main>
 
 
-    <!--Pie de Página-->
+    <!--Pie de página-->
     <?php include './FooterPage/FooterPage.php' ?>
 
 
-    <!--Script-->
+    <!--Scripts-->
     <script src="./Scripts/Tween-Header.js"></script>
-    
+
 </body>
 
-</html> <!--Estructura-->
+</html> 

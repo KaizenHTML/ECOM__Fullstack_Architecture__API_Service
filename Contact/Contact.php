@@ -51,35 +51,32 @@
         <!--Encapsulado Pequeño-->
         <div class="Encapsulated-Small">
 
-            <!--Encapsulado Contactos-->
-            <section class="Encapsulated-Contacts">
+            <!--Sección Contactos-->
+            <section class="Section-Contacts">
 
                 <h3> Contactos </h3>
 
                 <ul> 
-                    <li> <strong> Correo: </strong> cardonaarizasas@gmail.com </li>
-                    <li> <strong> Numero principal: </strong> 3001010014 </li>
-                    <li> <strong> Numero de respaldo: </strong> 300411147 </li>
-                    <li> <strong> Dirección: </strong> CALLE 98 #4 B - 80 SUR CONJ MALLORCA LOCAL 1 </li>
+                    
+                    <li class="Mail"> <strong> Correo: </strong> <a href="mailto:cardonaarizasas@gmail.com">cardonaarizasas@gmail.com </li></a>
+                    <li class="Number"> <strong> Numero principal: </strong> <a href="tel:+573001010014">3001010014 </li></a>
+                    <li class="Number"> <strong> Numero de respaldo: </strong> 300411147 </li>
+                    <li class="Addres"> <strong> Dirección: </strong> CALLE 98 #4 B - 80 SUR CONJ MALLORCA LOCAL 1 </li>
                 </ul>
 
             </section>
 
 
             <!--Encapsulado Métodos de Pago-->
-            <section class="Encapsulated-Methods">
+            <section class="Section-Hours">
 
-                <h3 class="Title-Methods"> Métodos de Pago </h3>
+                <h3 class="Title-Hours"> Horario de atención </h3>
 
-                <div class="Encapsulated-Logos-Payments">
+                <div class="Encapsulated-Hours">
 
-                    <img src="../Images/Bancolombia.png"  alt="Logo Bancolombia" class="Logos-Payments">
+                <p class="Hours"> Lunes a Sabado de 07:00 a 10:00 </p>
 
-                    <img src="../Images/Nequi.png" alt="Logo Nequi" class="Logos-Payments">
-
-                    <img src="../Images/daviplata-seeklogo.png" alt="Logo Banco Popular" class="Logos-Payments">
-
-                    <img src="../Images/Davivienda.jpg" alt="Logo Banco Occidente" class="Logos-Payments">
+                <p class="Hours"> Domingo y Festivos de 08:00 a 09:00</p>
 
                 </div>
 

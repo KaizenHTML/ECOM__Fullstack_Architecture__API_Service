@@ -1,36 +1,36 @@
 body{
 
-    font-family: "Afo"; 
-
+    font-family: "Afo"
 }
+
+
+/* Pie de Página ---------------------------------------------------------------------------------------------------*/
 
 .Footer-Page{
 
     background: #f2f4f4;
 
-    padding: 2.5%;
+    padding: 3.5%;
 
-    margin-top: 5%
+    margin-top: 5%;
+
+ 
 }
 
 
-.Encapsulated-Content-Footer-Page{
-
-    margin: auto;
+.Section-Content{
 
     text-align: center;
 
-    font-size: 1.3rem
+    font-size: 1.7rem
 }
 
 
-.Phrase-Footer-Page{
+.Copyright{
 
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 
-    text-align: center;
-
-    margin-bottom: 1.5%;
+    margin-bottom: 2.5%;
 }
 
 
@@ -38,7 +38,7 @@ body{
 
     text-decoration: none;
 
-    color: #abb2b9
+    color: #606264
 }
 
 
@@ -66,7 +66,7 @@ body{
 
 .Opening-Hours{
 
-    color: #abb2b9;
+    color: #606264;
 
     font-size: 1.3rem;
 }

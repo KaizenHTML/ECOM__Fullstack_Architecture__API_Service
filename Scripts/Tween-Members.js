@@ -17,7 +17,7 @@ gsap.from(FirstTitleMembers.chars, {
 
 
 // Tween para el segundo título
-const SecondTitleMembers = new SplitText('.Caption-Purpose-Supermarket', {
+const SecondTitleMembers = new SplitText('.Title-Purpose-Supermarket', {
     
     type: "chars"
 })
@@ -26,7 +26,7 @@ const Timeline = gsap.timeline({
 
     scrollTrigger: {
 
-        trigger: ".Caption-Purpose-Supermarket", 
+        trigger: ".Title-Purpose-Supermarket", 
 
         start: "top 65%", // Comenzando la animación cuando se vizualice el 65% de la parte posterior 
     

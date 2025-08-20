@@ -40,21 +40,23 @@
 
 <body> 
 
-    <!--Barra de Navegación-->
+    <!--Barra de navegación-->
     <?php include '../Header/Header.php'; ?>
     
 
     <!--Encapsulado Página-->
     <main class="Encapsulated-Page">
 
-        <section> <!--Sección de Miembros-->
+        <!--Sección de Miembros-->
+        <section> 
             
             <h2 class="Title-Members"> Miembros </h2>
     
-            <!--Encasulado Miembros-->
-            <div class="Encapsulated-Members"> 
+            
+            <div class="Section-Members"> 
 
-                <article class="Contents-Encapsulated">
+                <!--Cartas-->
+                <article class="Cards">
 
                     <img src="../Images/Propietarios.jpeg" class="Photos" alt="Foto de los Propietarios">
 
@@ -67,7 +69,7 @@
                 </article>
 
 
-                <article class="Contents-Encapsulated">
+                <article class="Cards">
 
                     <img src="../Images/Ana.jpeg" class="Photos" alt="Foto de la Administradora">
 
@@ -80,7 +82,7 @@
                 </article>
 
 
-                <article class="Contents-Encapsulated">
+                <article class="Cards">
 
                     <img src="../Images/Gloria.jpeg" class="Photos" alt="Foto de la coordinadora">
 
@@ -93,7 +95,7 @@
                 </article>
 
 
-                <article class="Contents-Encapsulated">
+                <article class="Cards">
 
                     <img src="../Images/Equipo.jpeg" class="Photos" alt="Foto del Equipo de Trabajo">
 
@@ -112,26 +114,25 @@
         </section>
             
         
-        <section> <!--Sección de Propósito-->
+        <!--Sección de Propósito-->
+        <section> 
             
-            <h2 class="Caption-Purpose-Supermarket"> Razón de ser </h2>
+            <h2 class="Title-Purpose-Supermarket"> Razón de ser </h2>
 
-            <div class="Encapsulated-Purpose-Supermarket">
+            <div class="Section-Purpose-Supermarket">
+             
+                <article class="Cards"> 
 
-                <!--Encapsulado Misión-->
-                <article class="Contents-Encapsulated"> 
-
-                    <h2 class="Caption-Contents-Purpose"> Misión </h2>
+                    <h2 class="Title-Cards-Purpose"> Misión </h2>
 
                     <p> Ofrecer productos de calidad y atención cercana a nuestros clientes, garantizando una experiencia de compra ágil, accesible y confiable. Trabajamos día a día para ser el punto de referencia en la comunidad, brindando variedad, buenos precios y un servicio amable que haga sentir a cada cliente como en casa. </p>
 
                 </article>
 
 
-                <!--Encapsulado Visión-->
-                <article class="Contents-Encapsulated"> 
+                <article class="Cards"> 
 
-                    <h2 class="Caption-Contents-Purpose"> Visión </h2>
+                    <h2 class="Title-Cards-Purpose"> Visión </h2>
 
                     <p> Ser el minimarket preferido en la zona, reconocido por nuestra calidad, compromiso y cercanía con las personas. Nos proyectamos como un negocio en constante crecimiento, adaptándonos a las necesidades de nuestros clientes y expandiendo nuestra oferta para seguir siendo su mejor opción en las compras del día a día. </p>
 
@@ -143,7 +144,8 @@
 
     </main> 
 
-    <!--Pie de Página Incluida con PHP-->
+
+    <!--Pie de página-->
     <?php include '../FooterPage/FooterPage.php' ?>
 
 

@@ -1,8 +1,18 @@
+.Mail, .Number, .Addres{
+
+    font-size: 1.3rem  
+}
+
+a{
+
+    color: #000
+}
+
+
+
 .Encapsulated-page{
 
-    display: flex;
-
-    flex-wrap: wrap;
+    display: flex
 }
 
 
@@ -10,7 +20,7 @@
 
     width: 45%;
 
-    height: 28rem;
+    height: 27.5rem;
 
     border: #e2e7ec groove 0.6rem;
 
@@ -20,29 +30,43 @@
 
 .Encapsulated-Small{
 
-    width: 42%;
+    width: 44%;
 
     display: flex;
 
     flex-direction: column;
 
-    margin-top: 3%;
+    margin-top: 3%
 }
 
 
-.Encapsulated-Contacts, .Encapsulated-Methods{
+.Section-Contacts, .Section-Hours{
 
-    background: #f8f9f9 ;
+    background: #f8f9f9;
 
     border: groove #e2e7ec 0.6rem;
-
-    height: 10rem;
     
     margin-bottom: 5%;
 
     font-family: "Afo";
 
-    padding: 3%
+    padding: 2.5%
+}
+
+.Section-Contacts:hover, .Section-Hours:hover{
+
+    background: #ffffff;
+}
+
+.Section-Contacts{
+
+    height: 12rem;
+}
+
+.Section-Hours{
+
+    height: 8rem;
+
 }
 
 
@@ -50,43 +74,40 @@ h3{
 
     margin: 0;
 
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 
     text-align: center
 }
 
 
-.Title-Methods{
+.Title-Hours{
 
-    margin-bottom: 5%;
+    margin-bottom: 2%
 }
 
 
-li{
 
-    font-size: 1.2rem  
-}
 
 /*---------------------------------------------------------------------------------------------------*/
 
-ul li:first-child::marker{
+.Mail::marker{
 
     content: "✉  "
 }
 
-ul li:nth-child(2)::marker, ul li:nth-child(3)::marker{
+.Number::marker{
 
     content: "☏  "
 }
 
-ul li:nth-child(4)::marker{
+.Addres::marker{
 
     content: "⚑  "
 }
 
 /*---------------------------------------------------------------------------------------------------*/
 
-.Encapsulated-Logos-Payments{
+.Encapsulated-Hours{
 
     display: flex;
 
@@ -94,15 +115,11 @@ ul li:nth-child(4)::marker{
 }
 
 
-.Logos-Payments{
+.Hours{
 
-    width: 15%;
+    font-size: 1.2rem;
 
-    border-radius: 20%
+    text-shadow: 0 0 .5rem #e2e7ec;
 }
 
 
-.Logos-Payments:hover{
-
-    box-shadow: 0 0 0.3rem #000
-}

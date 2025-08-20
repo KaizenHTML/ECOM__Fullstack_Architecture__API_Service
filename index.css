@@ -6,13 +6,13 @@ main{
 
     background: #f8f9f9;
 
-    border: groove #e2e7ec 0.5rem;
+    border: groove #e2e7ec .6rem;
 
     border-radius: 2rem
 }
 
 
-.Main-Text{
+.Text{
 
     font-size: 1.5rem;
 

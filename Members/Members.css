@@ -1,31 +1,36 @@
-
 body{
 
     font-family: "Afo"
 }
 
 
+p{
+
+    font-size: 1.3rem
+}
+
+
+/* Página -----------------------------------------------------------------------------------------------*/
+
 .Encapsulated-Page{
 
     display: flex;
 
-    flex-wrap: wrap;
-
-    justify-content: center
+    flex-wrap: wrap
 }
 
 
-.Title-Members, .Caption-Purpose-Supermarket{
+.Title-Members, .Title-Purpose-Supermarket{
     
     text-align: center;
-
-    color: #000;
 
     font-size: 6rem
 }
 
 
-.Encapsulated-Members, .Encapsulated-Purpose-Supermarket{
+/* Secciones de la página --------------------------------------------------------------------------------*/
+
+.Section-Members, .Section-Purpose-Supermarket{
 
     display: flex;
 
@@ -33,31 +38,37 @@ body{
 }
 
 
-.Contents-Encapsulated{
+.Section-Members{
 
-    width: 18%;
+    margin-bottom: 8%
+}
+
+
+/* Cartas -----------------------------------------------------------------------------------------------*/
+
+.Cards{
+
+    width: 19%;
     
     text-align: center;
 
-    margin-bottom: 3%;
-
-    background: #f8f9f9 ;
+    background: #f8f9f9;
 
     padding: 2%;
 
     border: 8px #e2e7ec groove;
 
-    border-radius: 1.1rem;
+    border-radius: 1rem;
 
     transition: transform 1.5s ease;
 }
 
 
-.Contents-Encapsulated:hover{
+.Cards:hover{
 
     background: #fff;
 
-    transform: scale(1.05) ;
+    transform: scale(1.05) 
 }
 
 
@@ -67,9 +78,9 @@ body{
 
     height: 10.5rem;
 
-    border-radius: 20%;
+    border-radius: 50%;
 
-    box-shadow: 0 0 0.5rem #abb2b9
+    box-shadow: 0 0 0.3rem #abb2b9
 }
 
 
@@ -85,13 +96,9 @@ body{
 }
 
 
-p{
+/* Título cartas misión, visión --------------------------------------------------------------------------*/
 
-    font-size: 1.2rem
-}
-
-
-.Caption-Contents-Purpose{
+.Title-Cards-Purpose{
 
     font-size: 3rem;
 
