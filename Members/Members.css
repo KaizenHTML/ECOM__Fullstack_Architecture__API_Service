@@ -3,14 +3,13 @@ body{
     font-family: "Afo"
 }
 
-
-p{
+p, .Member-Position{
 
     font-size: 1.3rem
 }
 
 
-/* Página -----------------------------------------------------------------------------------------------*/
+/* Encapsulado página -----------------------------------------------------------------------------------------------*/
 
 .Encapsulated-Page{
 
@@ -28,9 +27,9 @@ p{
 }
 
 
-/* Secciones de la página --------------------------------------------------------------------------------*/
+/* Secciones página --------------------------------------------------------------------------------*/
 
-.Section-Members, .Section-Purpose-Supermarket{
+.Section-Cards-Members, .Section-Card-Purpose{
 
     display: flex;
 
@@ -64,6 +63,8 @@ p{
 }
 
 
+/* Contenido cartas -----------------------------------------------------------------------------------------------*/
+
 .Cards:hover{
 
     background: #fff;
@@ -72,7 +73,7 @@ p{
 }
 
 
-.Photos{
+.Member-Photos{
 
     width: 10.5rem;
 
@@ -84,11 +85,9 @@ p{
 }
 
 
-.Position{
+.Member-Position{
 
     color: #abb2b9;
-
-    font-size: 1.3rem;
 
     margin-top: 10%;
 
@@ -96,10 +95,9 @@ p{
 }
 
 
-/* Título cartas misión, visión --------------------------------------------------------------------------*/
+/* Título sección proposito --------------------------------------------------------------------------*/
 
 .Title-Cards-Purpose{
 
-    font-size: 3rem;
-
+    font-size: 3rem
 }

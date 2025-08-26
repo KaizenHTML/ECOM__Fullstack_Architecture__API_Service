@@ -1,4 +1,4 @@
-.Mail, .Number, .Addres{
+.Mail, .Number, .Addres, .Hours{
 
     font-size: 1.3rem  
 }
@@ -8,7 +8,17 @@ a{
     color: #000
 }
 
+h2{
 
+    margin: 0;
+
+    font-size: 1.8rem;
+
+    text-align: center
+}
+
+
+/* Encapsulado página -----------------------------------------------------------------------------------------------*/
 
 .Encapsulated-page{
 
@@ -28,6 +38,8 @@ a{
 }
 
 
+/* Encapsulado pequeño -----------------------------------------------------------------------------------*/
+
 .Encapsulated-Small{
 
     width: 44%;
@@ -39,6 +51,8 @@ a{
     margin-top: 3%
 }
 
+
+/* Secciones ---------------------------------------------------------------------------------------------*/
 
 .Section-Contacts, .Section-Hours{
 
@@ -53,42 +67,26 @@ a{
     padding: 2.5%
 }
 
+
 .Section-Contacts:hover, .Section-Hours:hover{
 
-    background: #ffffff;
+    background: #ffffff
 }
+
 
 .Section-Contacts{
 
-    height: 12rem;
+    height: 12rem
 }
+
 
 .Section-Hours{
 
-    height: 8rem;
-
+    height: 8rem
 }
 
 
-h3{
-
-    margin: 0;
-
-    font-size: 1.8rem;
-
-    text-align: center
-}
-
-
-.Title-Hours{
-
-    margin-bottom: 2%
-}
-
-
-
-
-/*---------------------------------------------------------------------------------------------------*/
+/* Sección contactos---------------------------------------------------------------------------------------------------*/
 
 .Mail::marker{
 
@@ -105,7 +103,14 @@ h3{
     content: "⚑  "
 }
 
-/*---------------------------------------------------------------------------------------------------*/
+
+/* Sección horas---------------------------------------------------------------------------------------------------*/
+
+.Title-Hours{
+
+    margin-bottom: 1.8%
+}
+
 
 .Encapsulated-Hours{
 
@@ -113,13 +118,4 @@ h3{
 
     justify-content: space-between
 }
-
-
-.Hours{
-
-    font-size: 1.2rem;
-
-    text-shadow: 0 0 .5rem #e2e7ec;
-}
-
 

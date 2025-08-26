@@ -1,14 +1,16 @@
-html{
-    font-size: 16px;
-}
-
-
 body{
-    margin: 0;
+
+    margin: 0
 }
 
 
-/*---------------------------------------------------------------------------------------------------*/
+a{
+
+    text-decoration: none
+}
+
+
+/* Encabezado -------------------------------------------------------------------------------------*/
 
 .Page-Header{
 
@@ -17,10 +19,16 @@ body{
     width: 100%;
   
     display: flex;
-  
-    flex-wrap: wrap;
 
-    margin-bottom: 5%;
+    margin-bottom: 5%
+}
+
+
+.Encapsulated-Icon-Title{
+
+    display: flex;
+
+    align-items: center
 }
 
 
@@ -28,9 +36,9 @@ body{
 
     width: 95%;
 
-    height: 5rem;
+    height: 5.5rem;
 
-    margin: 80.5% 55% 0 50%
+    margin-left: 40%
 }
 
 
@@ -40,15 +48,14 @@ body{
   
     font-family: "Neee";
   
-    font-weight: 700;
-  
     font-size: 3rem;
   
     letter-spacing: 0.5rem;
 
-    margin-left: 4%; 
+    margin-left: 3.5%
 }
 
+/* Barra navegación --------------------------------------------------------------------------------*/
 
 .Navigation-Bar{
 
@@ -60,28 +67,22 @@ body{
 
     margin-left: auto;
 
-    padding: 4.5% 2.5% 0 0
+    padding: 4.5% 2.3% 0 0
 }
 
 
-.navigation-bar-text{
+.Navigation-Bar-Text{
 
     margin-top: 2%;
-
-    font-family: "Afo";
   
-    font-size: 1.4rem
+    font-size: 1.5rem;
+
+    font-family: "Afo"
 }
 
 
-.Links-bar-navigation{
 
-    text-decoration: none;
-
- }
-
-
-.navigation-bar-list{
+.Navigation-Bar-List{
 
     list-style-type: none;
 
@@ -104,7 +105,7 @@ body{
 }
 
 
-.navigation-bar-list::after{
+.Navigation-Bar-List::after{
 
     content: "";
 
@@ -124,7 +125,7 @@ body{
 }
 
 
-.navigation-bar-list:hover::after{
+.Navigation-Bar-List:hover::after{
 
     width: 100%
 }

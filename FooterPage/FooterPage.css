@@ -4,72 +4,74 @@ body{
 }
 
 
+li{
+
+    list-style: none 
+}
+
+
 /* Pie de Página ---------------------------------------------------------------------------------------------------*/
 
 .Footer-Page{
 
     background: #f2f4f4;
 
-    padding: 3.5%;
+    padding: 2.8%;
 
-    margin-top: 5%;
-
- 
+    margin-top: 5%
 }
 
 
+/* Contenido ---------------------------------------------------------------------------------------------------*/
+
 .Section-Content{
 
-    text-align: center;
+    margin: auto;
 
-    font-size: 1.7rem
+    text-align: center
 }
 
 
 .Copyright{
 
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 
-    margin-bottom: 2.5%;
+    margin-bottom: 1.8%
 }
 
 
-.Link-Legal-Terms{
+.Footer-Nav{
 
-    text-decoration: none;
+    justify-content: space-evenly;
 
-    color: #606264
+    width: 45%;
+
+    display: flex;
+
+    padding: 0;
+
+    margin: auto;
+
+    margin-bottom: 1.8%
 }
 
 
-.Link-Legal-Terms:hover{
-
-    color: #000
-}
-
-
-.List-Legal-Terms{
-    
-    list-style: none;
-
-    width: 12.8%;
-
-    display: inline-block;
-}
-
-
-.List-Legal-Terms:nth-last-child(1){
-
-    width: 15.2%
-}
-
-
-.Opening-Hours{
+.Link-Legal, .Link-Corporate{
 
     color: #606264;
 
-    font-size: 1.3rem;
+    font-size: 1.3rem
 }
+
+
+.Link-Legal:hover, .Link-Corporate:hover{
+
+    color: #000;
+
+    text-shadow: 0 0 .5px #000;
+}
+
+
 
 
 

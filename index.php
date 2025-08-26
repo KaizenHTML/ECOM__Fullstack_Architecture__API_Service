@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es-co"> 
+<html lang="es"> 
 
 <head> 
 
@@ -9,23 +9,21 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description" content="Bienvenido a Market Mallorca. Conoce nuestra misión y visión, descubre nuestro catálogo de productos, realiza pedidos y contáctanos para tus compras en Ibagué."> <!--Descripción página-->
+
+
+    <link rel="icon" href="./Images/Lime.webp"> 
+
+    <link rel="stylesheet" href="Fonts/Fonts.css"> 
+
     <link rel="stylesheet" href="index.css"> <!--CSS Central-->
 
     <link rel="stylesheet" href="./Header/Header.css"> <!--CSS Encabezado-->
 
     <link rel="stylesheet" href="./FooterPage/FooterPage.css"> <!--CSS Pie de Página-->
 
-    <link rel="stylesheet" href="Fonts/Fonts.css"> <!--Tipografias-->
-
-    <link rel="icon" href="./Images/Lime.png"> <!--Icono-->
-
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script> <!--Enlace Gsap-->
-
-    <Script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></Script> <!--Enlace SplitText-->
-
     <link rel="canonical" href="https://www.marketmallorca.com/index.php"> <!--URL Canonica-->
 
-    <meta name="description" content="Bienvenido a Market Mallorca. Conoce nuestra misión y visión, descubre nuestro catálogo de productos, realiza pedidos y contáctanos para tus compras en Ibagué."> <!--Descripción-->
 
     <meta property="og:title" content="Inicio | Market Mallorca"> <!--Titulo Enlace-->
 
@@ -34,8 +32,6 @@
     <meta property="og:url" content="https://www.marketmallorca.com/index.php"> <!--URL Enlace-->
 
     <meta property="og:type" content="website"> <!--Tipo Enlace-->
-
-    <link rel="stylesheet" crossorigin href="/MarketMallorca/React/assets/index-IwfBJDm0.css">
 
 </head>
 
@@ -48,7 +44,7 @@
 
     <main>
 
-        <p class="Text"> Bienvenidos a <strong> Market Mallorca. </strong> En esta nueva página encontrarán todo lo necesario para conocernos y así tener un mayor acercamiento con ustedes, puesto que son la prioridad en el día a día de nuestro trabajo. Aquí podrán ver nuestro catálogo de productos, realizar pedidos, conocer quiénes somos y nuestros objetivos como empresa, así como los diferentes medios para contactarnos y llegar a nosotros. </p>
+        <p class="Text"> Bienvenidos a <strong> Market Mallorca</strong>. En esta nueva página encontrarán todo lo necesario para conocernos y así tener un mayor acercamiento con ustedes, puesto que son la prioridad en el día a día de nuestro trabajo. Aquí podrán ver nuestro catálogo de productos, realizar pedidos, conocer quiénes somos y nuestros objetivos como empresa, así como los diferentes medios para contactarnos y llegar a nosotros. </p>
 
     </main>
 
@@ -57,8 +53,13 @@
     <?php include './FooterPage/FooterPage.php' ?>
 
 
-    <!--Scripts-->
-    <script src="./Scripts/Tween-Header.js"></script>
+    <!--Script-->
+    <script src="./Scripts/Tween-Header.js" defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script> <!--Enlace Gsap-->
+
+    <Script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></Script> <!--Enlace SplitText-->
+
 
 </body>
 

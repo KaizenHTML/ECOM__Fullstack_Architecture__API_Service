@@ -9,25 +9,21 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description" content="Descubre el corazón de Market Mallorca en Ibagué: nuestra misión de calidad, la visión de servirte mejor y el equipo comprometido con la comunidad. ¡Conoce a las personas detrás de tus compras!"> <!--Descripción página-->
+
+
+    <link rel="icon" href="../Images/Lime.webp">
+
+    <link rel="stylesheet" href="../Fonts/Fonts.css"> 
+
     <link rel="stylesheet" href="Members.css"> <!--CSS-->
 
     <link rel="stylesheet" href="../Header/Header.css"> <!--CSS Encabezado-->
 
     <link rel="stylesheet" href="../FooterPage/FooterPage.css"> <!--CSS Pie de Pagina-->
 
-    <link rel="stylesheet" href="../Fonts/Fonts.css"> <!--Tipografias-->
-
-    <link rel="icon" href="../Images/Grupo.png"> <!--Icono-->
-
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script> <!--Enlace Gsap-->
-
-    <Script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></Script> <!--Enlace SplitText-->
-    
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script> <!--Enlace ScrollTrigger-->
-
     <link rel="canonical" href="https://marketmallorca/Members/Members.php"> <!--Enlace Canónico-->
 
-    <meta name="description" content="Conoce la misión, visión y el equipo detrás de Market Mallorca. Descubre nuestros valores y compromiso con la comunidad."> <!--Descripción-->
 
     <meta property="og:title" content="¿Quiénes Somos? | Market Mallorca">  <!--Enlace Titulo-->
 
@@ -44,23 +40,22 @@
     <?php include '../Header/Header.php'; ?>
     
 
-    <!--Encapsulado Página-->
+    <!--Encapsulado página-->
     <main class="Encapsulated-Page">
 
-        <!--Sección de Miembros-->
+        <!--Sección de miembros-->
         <section> 
             
             <h2 class="Title-Members"> Miembros </h2>
     
-            
-            <div class="Section-Members"> 
+            <div class="Section-Cards-Members"> 
 
                 <!--Cartas-->
                 <article class="Cards">
 
-                    <img src="../Images/Propietarios.jpeg" class="Photos" alt="Foto de los Propietarios">
+                    <img src="../Images/Propietarios.webp" class="Member-Photos" alt="Foto de los Propietarios del Market Mallorca">
 
-                    <span class="Position"> Propietarios </span>
+                    <span class="Member-Position"> Propietarios </span>
 
                     <h2> Sthepania Ariza y Juan Pablo </h2>
 
@@ -71,9 +66,9 @@
 
                 <article class="Cards">
 
-                    <img src="../Images/Ana.jpeg" class="Photos" alt="Foto de la Administradora">
+                    <img src="../Images/Ana.webp" class="Member-Photos" alt="Foto de la Administradora Ana Caleño">
 
-                    <span class="Position"> Administradora </span>
+                    <span class="Member-Position"> Administradora </span>
 
                     <h2> Ana Caleño </h2>
 
@@ -84,9 +79,9 @@
 
                 <article class="Cards">
 
-                    <img src="../Images/Gloria.jpeg" class="Photos" alt="Foto de la coordinadora">
+                    <img src="../Images/Gloria.webp" class="Member-Photos" alt="Foto de la coordinadora Gloria Loaiza">
 
-                    <span class="Position"> Coordinadora </span>
+                    <span class="Member-Position"> Coordinadora </span>
 
                     <h2> Gloria Loaiza </h2>
 
@@ -97,9 +92,9 @@
 
                 <article class="Cards">
 
-                    <img src="../Images/Equipo.jpeg" class="Photos" alt="Foto del Equipo de Trabajo">
+                    <img src="../Images/Equipo.webp" class="Member-Photos" alt="Foto del Equipo de Trabajo: Cajeros y Domiciliarios.">
 
-                    <span class="Position"> Cajeros y domiciliarios </span>
+                    <span class="Member-Position"> Cajeros y domiciliarios </span>
 
                     <h2> Equipo de Trabajo </h2>
 
@@ -114,12 +109,12 @@
         </section>
             
         
-        <!--Sección de Propósito-->
+        <!--Sección de propósito-->
         <section> 
             
             <h2 class="Title-Purpose-Supermarket"> Razón de ser </h2>
 
-            <div class="Section-Purpose-Supermarket">
+            <div class="Section-Card-Purpose">
              
                 <article class="Cards"> 
 
@@ -150,7 +145,14 @@
 
 
     <!--Script-->
-    <script src="../Scripts/Tween-Members.js"></script>
+    <script src="../Scripts/Tween-Members.js" defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" ></script> <!--Enlace Gsap-->
+
+    <Script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" ></Script> <!--Enlace SplitText-->
+    
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script> <!--Enlace ScrollTrigger-->
+
 
 </body>
 
