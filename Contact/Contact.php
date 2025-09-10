@@ -80,9 +80,9 @@
 
                 <div class="Encapsulated-Hours">
 
-                    <p class="Hours"> <strong> Lunes a Sabado: </strong> 07:00 a 10:00 </p>
+                    <p class="Hours"> <strong> Lunes a Sabado: </strong> 07:00 a 22:00 </p>
 
-                    <p class="Hours"> <strong> Domingo y Festivos: </strong> 08:00 a 09:00</p>
+                    <p class="Hours"> <strong> Domingo y Festivos: </strong> 08:00 a 21:00</p>
 
                 </div>
 
