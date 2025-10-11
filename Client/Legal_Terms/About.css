@@ -1,0 +1,58 @@
+body{
+
+    background: #000c;
+
+    font-family: "Afo"
+}
+
+
+p, .Phrase{
+
+    font-size: 1.3rem
+}
+
+
+/* Encabezado página----------------------------------------------------------------------------------*/
+
+.Encapsulated-Page{
+
+    background: #f8f9f9 ;
+
+    border: 0.6rem groove #e2e7ec;
+
+    border-radius: .5rem;
+
+    width: 80%;
+
+    padding: 3.5%;
+
+    margin: auto;
+
+    margin-top: 5%;
+
+    margin-bottom: 5%
+}
+
+
+/* Contenido página-----------------------------------------------------------------------------------*/
+
+h1{
+
+    font-size: 3rem;
+
+    text-shadow: 0 0 0.1rem #000
+}
+
+
+.Intro-Paragraph{
+
+    font-size: 1.7rem;
+
+    margin-top: 3rem
+}
+
+
+.Phrase{
+
+    margin-top: 3.5%
+}

@@ -1,0 +1,77 @@
+body{
+
+    font-family: "Afo"
+}
+
+
+li{
+
+    list-style: none 
+}
+
+
+/* Pie de página--------------------------------------------------------------------------------------*/
+
+footer{
+
+    background: #f2f4f4;
+
+    padding: 2.8%;
+
+    margin-top: 5%
+}
+
+
+/* Contenido------------------------------------------------------------------------------------------*/
+
+.Section-Content{
+
+    margin: auto;
+
+    text-align: center
+}
+
+
+.Copyright{
+
+    font-size: 1.4rem;
+
+    margin-bottom: 1.8%
+}
+
+
+.Footer-Nav{
+
+    justify-content: space-evenly;
+
+    width: 45%;
+
+    display: flex;
+
+    padding: 0;
+
+    margin: auto;
+
+    margin-bottom: 1.8%
+}
+
+
+.Links-Legals{
+
+    color: #606264;
+
+    font-size: 1.3rem
+}
+
+
+.Links-Legals:hover{
+
+    color: #000;
+
+    text-shadow: 0 0 .8px #000
+}
+
+
+
+
+

@@ -1,0 +1,22 @@
+main{
+
+    width: 55%;
+
+    margin: auto;
+
+    background: #f8f9f9;
+
+    border: groove #e2e7ec .6rem;
+
+    border-radius: 2rem
+}
+
+
+.Text-Welcome{
+
+    font-size: 1.5rem;
+
+    padding: 5%;
+
+    font-family: "Afo"
+}
