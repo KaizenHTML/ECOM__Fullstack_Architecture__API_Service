@@ -1,4 +1,4 @@
-🛒 Market Mallorca - E-commerce Full-Stack
+🛒#Market Mallorca - E-commerce Full-Stack
 Resumen de la página web
 Market Mallorca es una plataforma de comercio electrónico de pila completa (Full-Stack) diseñada para simular la gestión y venta de productos de supermercado.
 
