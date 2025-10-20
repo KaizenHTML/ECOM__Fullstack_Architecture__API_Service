@@ -14,9 +14,9 @@
 
 
     <!--CSS-->
-    <link rel="icon" href="../Images/IconLime.webp">
+    <link rel="icon" href="../Assets/Images/IconLime.webp">
 
-    <link rel="stylesheet" href="../Fonts/Fonts.css"> 
+    <link rel="stylesheet" href="../Assets/Fonts/Fonts.css"> 
 
     <link rel="stylesheet" href="Members.css"> 
 
@@ -58,7 +58,7 @@
                 <!--Cartas-->
                 <article class="Cards">
 
-                    <img src="../Images/Propietarios.webp" class="Member-Photos" alt="Foto de los Propietarios del Market Mallorca">
+                    <img src="../Assets/Images/Propietarios.webp" class="Member-Photos" alt="Foto de los Propietarios del Market Mallorca">
 
                     <h3 class="Member-Position"> Propietarios </h3>
 
@@ -72,7 +72,7 @@
 
                 <article class="Cards">
 
-                    <img src="../Images/Ana.webp" class="Member-Photos" alt="Foto de la Administradora Ana Caleño">
+                    <img src="../Assets/Images/Ana.webp" class="Member-Photos" alt="Foto de la Administradora Ana Caleño">
 
                     <h3 class="Member-Position"> Administradora </h3>
 
@@ -86,7 +86,7 @@
 
                 <article class="Cards">
 
-                    <img src="../Images/Gloria.webp" class="Member-Photos" alt="Foto de la coordinadora Gloria Loaiza">
+                    <img src="../Assets/Images/Gloria.webp" class="Member-Photos" alt="Foto de la coordinadora Gloria Loaiza">
 
                     <h3 class="Member-Position"> Coordinadora </h3>
 
@@ -100,7 +100,7 @@
 
                 <article class="Cards">
 
-                    <img src="../Images/Equipo.webp" class="Member-Photos" alt="Foto del Equipo de Trabajo: Cajeros y Domiciliarios.">
+                    <img src="../Assets/Images/Equipo.webp" class="Member-Photos" alt="Foto del Equipo de Trabajo: Cajeros y Domiciliarios.">
 
                     <h3 class="Member-Position"> Cajeros y domiciliarios </h3>
 
@@ -152,7 +152,7 @@
 
 
     <!--Pie de página-->
-    <?php include '../Footer_Page/FooterPage.php' ?>
+    <?php include '../FooterPage/FooterPage.php' ?>
 
 
     <!--Scripts-->

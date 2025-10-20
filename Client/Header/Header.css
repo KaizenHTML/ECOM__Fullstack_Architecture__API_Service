@@ -130,25 +130,25 @@ a{
 /* Iconos------------------------------------------------------------------------------------------------------*/
 
 .IconoAdmin{
-    background-image: url("../Images/IconAccount.webp")
+    background-image: url("../Assets/Images/IconAccount.webp")
 
 }
 
 
 .IconoCatalogo{
-    background-image: url("../Images/IconCatalog.webp")
+    background-image: url("../Assets/Images/IconCatalog.webp")
 
 }
 
 
 .IconoDescripcion{
-    background-image: url("../Images/IconMembers.webp")
+    background-image: url("../Assets/Images/IconMembers.webp")
 
 }
 
 
 .IconoContactos{
-    background-image: url("../Images/IconContact.webp")
+    background-image: url("../Assets/Images/IconContact.webp")
 
 }
 

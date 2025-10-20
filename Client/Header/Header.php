@@ -4,8 +4,8 @@
 
         <!--Logo-->
         <div class="Encapsulated-Icon-Title">
-            <a href="../index.php">
-                <img src="/MarketMallorca/Client/Images/IconLime.webp" alt="Logo del Market Mallorca" class="IconLemon">
+            <a href="/MarketMallorca/Client/index.php">
+                <img src="/MarketMallorca/Client/Assets/Images/IconLime.webp" alt="Logo del Market Mallorca" class="IconLemon">
             </a>
         </div>
 

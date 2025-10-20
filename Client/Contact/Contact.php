@@ -14,9 +14,9 @@
 
     
     <!--CSS-->
-    <link rel="icon" href="../Images/IconLime.webp">
+    <link rel="icon" href="../Assets/Images/IconLime.webp">
 
-    <link rel="stylesheet" href="../Fonts/Fonts.css"> 
+    <link rel="stylesheet" href="../Assets/Fonts/Fonts.css"> 
 
     <link rel="stylesheet" href="Contact.css"> 
 
@@ -95,7 +95,7 @@
 
 
     <!--Pie de página-->
-    <?php include '../Footer_Page/FooterPage.php' ?>
+    <?php include '../FooterPage/FooterPage.php' ?>
 
 </body>
 
