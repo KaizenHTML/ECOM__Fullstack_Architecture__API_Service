@@ -20,7 +20,7 @@ const authenticateToken = (req, res, next) => {
         });
     }
     
-    // Confirmando existencia de firma secreta
+    // Confirmando existencia de clave secreta
     if (!JWT_SECRET) {
         console.error('ERROR: JWT_SECRET no definida en el entorno.');
         return res.status(500).json({ message: 'Error de configuración del servidor.' });
@@ -37,7 +37,7 @@ const authenticateToken = (req, res, next) => {
         }
 
         // Agregando ID usuario
-        req.userId = user.id; 
+        req.user = user; 
 
         next();
     });
