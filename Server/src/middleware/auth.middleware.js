@@ -1,16 +1,16 @@
 const jwt = require('jsonwebtoken');
 
 
-// Secreto .env
+// Clave secreta
 const JWT_SECRET = process.env.JWT_SECRET;
 
 
+// Autenticando Token
 const authenticateToken = (req, res, next) => {
 
     const authHeader = req.headers['authorization'];
     
-
-    // Comprobando composición encabezado
+    // Comprobando la composición del encabezado
     const token = authHeader && authHeader.startsWith('Bearer ') ? authHeader.split(' ')[1] : authHeader;
 
 
@@ -20,10 +20,11 @@ const authenticateToken = (req, res, next) => {
         });
     }
     
-    // Confirmando existencia de clave secreta
     if (!JWT_SECRET) {
         console.error('ERROR: JWT_SECRET no definida en el entorno.');
-        return res.status(500).json({ message: 'Error de configuración del servidor.' });
+        return res.status(500).json({ 
+            message: 'Error de configuración del servidor.' 
+        });
     }
 
 
@@ -31,13 +32,25 @@ const authenticateToken = (req, res, next) => {
     jwt.verify(token, JWT_SECRET, (err, user) => {
 
         if (err) {
+            if (err.name === 'TokenExpiredError') {
+                return res.status(401).json({
+                    message: 'Token expirado.'
+                });
+            }
+            
+            if (err.name === 'JsonWebTokenError') {
+                return res.status(403).json({
+                    message: 'Token inválido.'
+                });
+            }
+            
             return res.status(403).json({
                 message: 'Token inválido o expirado.'
             });
         }
-
-        // Agregando ID usuario
-        req.user = user; 
+        
+        // Guardando contenido del token en la solicitud
+        req.user = user;
 
         next();
     });

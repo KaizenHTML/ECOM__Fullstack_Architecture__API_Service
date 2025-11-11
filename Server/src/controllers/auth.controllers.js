@@ -1,26 +1,26 @@
-const { sendVerificationEmail } = require('../utils/email');
+const { forgotPassword, resetPassword } = require('../services/auth.services')
+const { sendVerificationEmail, sendPasswordResetEmail  } = require('../utils/email');
 const errorHandler = require('../middleware/errorHandler');
-const authService = require('../services/auth.services'); 
+const userService = require('../services/user.services'); 
 const db = require('../config/db.config');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const crypto = require('crypto');
 
 
-// Registro
+
 const register = errorHandler(async (req, res, _next) => {
 
     const { name, email, password, acceptterms } = req.body;
 
 
-    // Verificando correo existente
-    const existingUser = await authService.getUserByEmail(email);
+    // Comprobando correo existente
+    const existingUser = await userService.getUserByEmail(email);
     if (existingUser) {
         return res.status(400).json({ 
             message: 'Cuenta existente con este correo.' 
         });
     }
-
 
     // Hasheando contraseña
     const hashedPassword = await bcrypt.hash(password, 10);
@@ -31,13 +31,14 @@ const register = errorHandler(async (req, res, _next) => {
     const hashedToken = await bcrypt.hash(verificationToken, 10);
 
 
-    // Registrando usuario no verificado
-    const newUser = await authService.registerUser(
+    // Registrando usuario no comprobado
+    const newUser = await userService.registerUser(
         name, email, hashedPassword, acceptterms, false, hashedToken
     ); 
 
-    // Enviando email
-    const verifyUrl = `http://localhost:4000/verify-email?token=${verificationToken}&email=${email}`;
+
+    // Enviando Email
+    const verifyUrl = `http://localhost:4000/api/auth/verify-email?token=${verificationToken}&email=${email}`;
     await sendVerificationEmail(email, name, verifyUrl);
 
 
@@ -52,15 +53,51 @@ const register = errorHandler(async (req, res, _next) => {
 });
 
 
+const verifyEmail = async (req, res) => {
 
-// Login
+    const { email, token } = req.query;
+
+
+    if (!email || !token) {
+        return res.status(400).send('Enlace inválido.');
+    }
+
+    try {
+        const result = await db.query(
+            'SELECT verification_token, verified FROM users WHERE email = $1', [email]
+        );
+
+
+        const isValid = await bcrypt.compare(token, result.rows[0].verification_token);
+
+        if (!isValid) {
+            return res.status(400).send('Token inválido');
+        }
+
+        // Actualiza el usuario
+        const updateResult = await db.query(
+            'UPDATE users SET verified = true, verification_token = NULL WHERE email = $1 RETURNING *',
+            [email]
+        );
+
+        res.redirect(`${process.env.CLIENT_URL}/login?verified=true`);
+
+    } catch (error) {
+        res.status(500).send('Error del servidor');
+    }
+};
+
+
+
+// Login usuario
 const login = errorHandler(async (req, res, _next) => {
 
     const { email, password } = req.body;
 
 
     // Buscando correos registrados
-    const user = await authService.getUserByEmail(email);
+    const user = await userService.getUserByEmail(email);
+    
     if (!user) {
         return res.status(401).json({ 
             message: 'Credenciales inválidas. Correo o contraseña incorrecta.' 
@@ -93,22 +130,66 @@ const login = errorHandler(async (req, res, _next) => {
     res.status(200).json({ 
         message: 'Login exitoso', 
         token, 
-        user: { id: user.id, name: user.name, email: user.email, created_At: user.created_at }
+        user: { 
+            id: user.id, 
+            name: user.name, 
+            email: user.email,
+            created_at: user.created_at 
+        }
     });
 });
 
 
 
-// Verificando Token 
+// Enviando correo de cambio de contraseña
+const handleForgotPassword = async (req, res) => {
+
+    const { email } = req.body;
+
+    try {
+        await forgotPassword(email);
+        res.status(200).json({
+            message: 'Correo de recuperación enviado.'
+        });
+
+    } catch(error) {
+        res.status(400).json({
+            message: error.message
+        });
+    }
+};
+
+
+
+// Recibiendo token con la contraseña nueva
+const handleResetPassword = async (req, res) => {
+
+    const { token, newPassword } = req.body;
+
+    try {
+        await resetPassword(token, newPassword);
+        res.status(200).json({
+            message: 'Contraseña actualizada correctamente.'
+        });
+
+    } catch(error) {
+        res.status(400).json({
+            message: error.message
+        });
+    }
+};
+
+
+ 
+// Comprobando Token 
 const verifyToken = async (req, res) => {
     
-    // Adjuntando ID usuario
+    // Comprobando existencia de usuario
     const userId = req.user?.id; 
 
 
     if (userId) {
-        // Buscando usuario en la bd
-        const user = await authService.getUserById(parseInt(userId));
+        const user = await userService.getUserById(parseInt(userId));
 
         if (!user) {
             return res.status(404).json({ 
@@ -116,26 +197,30 @@ const verifyToken = async (req, res) => {
             });
         };
         
-        // Usuario encontrado
         return res.status(200).json({
             success: true,
             message: 'Token válido. Acceso autorizado.',
-            user: { id: user.id, name: user.name, email: user.email }
+            user: { 
+                id: user.id, 
+                name: user.name, 
+                email: user.email, 
+                created_at: user.created_at
+            }
         });
     };
 };
 
 
 // Eliminando usuario
-const deleteAccount = async (req, res) =>{
+const deleteAccount = async (req, res) => {
 
     const userId = req.user.id
 
-    try{
-        // Buscando usuario
-        const user = await authService.getUserById(userId);
+    try {
+        
+        const user = await userService.getUserById(userId);
 
-        if(!user){
+        if (!user) {
             res.status(404).json({
                 message: 'Usuario no encontrado.'
             });
@@ -159,52 +244,13 @@ const deleteAccount = async (req, res) =>{
 };
 
 
-
-// Verificando email
-const verifyEmail = async (req, res) => {
-
-    const { email, token } = req.query;
-
-    if(!email || !token){
-        return res.status(400).send('Enlace inválido.');
-    }
-    
-
-    try {
-        const result = await db.query(
-            'SELECT verification_token FROM users WHERE email = $1 AND verified = false', [email]
-        );
-
-
-        if(result.rows.length === 0) {
-            return res.status(400).send('Enlace inválido o verificado');
-        }
-
-
-        const isValid = await bcrypt.compare(token, result.rows[0].verification_token);
-
-        if(!isValid){
-            return res.status(400).send('Token inválido');
-        }
-
-        await db.query(
-            'UPDATE users SET verified = true, verification_token = NULL WHERE email = $1',
-            [email]
-        );
-
-        res.redirect('http://localhost:3000/login?verified=true');
-
-    } catch (error) {
-        console.error('Error al verificar:', error);
-        res.status(500).send('Error del servidor');
-    }
-};
-
-
 module.exports = {
+
     register,
+    verifyEmail,
     login,
+    handleForgotPassword,
+    handleResetPassword,
     verifyToken,
     deleteAccount,
-    verifyEmail,
 };

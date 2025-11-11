@@ -1,28 +1,28 @@
 require('dotenv').config(); 
 
-const db = require('./src/config/db.config'); 
-const cors = require('cors');
+const authRoutes = require('./src/routes/auth.routes')
 const express = require('express');
-
-
-// Importando Rutas
-const authRoutes = require('./src/routes/auth.routes'); 
+const morgan = require('morgan');
+const cors = require('cors');
 
 
 const app = express();
 const PORT = process.env.PORT || 4000;
 
 
-// Middleware
+// Middleware logging
+app.use(morgan('combined'));
+
+
 app.use(cors());
 app.use(express.json()); 
 
 
-// Rutas
+// Rutas API
 app.use('/api/auth', authRoutes);
 
 
-// Controlando Errores
+// Controlando errores
 app.use((err, _req, res, _next) => {
     console.error(err.stack);
     res.status(500).json({ 
@@ -31,8 +31,7 @@ app.use((err, _req, res, _next) => {
     });
 });
 
-
-// Encendiendo Servidor
+// Encendiendo servidor
 app.listen(PORT, () => {
-    console.log(`Servidor de Express corriendo en http://localhost:${PORT}.`);
+    console.log(`Servidor de Express corriendo en http://localhost:${PORT}`);
 });
