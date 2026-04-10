@@ -1,36 +1,43 @@
+<!--Base URL-->
+<?php 
+    require_once dirname(__DIR__) . '/config.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="es"> 
 
 <head> 
 
-    <title> Términos y Condiciones | Market Mallorca </title>
-
     <meta charset="UTF-8"> 
+
+    <title> Términos y Condiciones | Market Mallorca </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--Descripción página-->
+    
+    <!--Description Page-->
     <meta name="description" content="Lee los Términos y Condiciones de Uso de Market Mallorca. Conoce las normas para el acceso, compras, entregas y uso de nuestro sitio web.">
 
 
     <!--CSS-->
     <link rel="stylesheet" href="Terms.css"> 
 
-    <link rel="stylesheet" href="../Assets/Fonts/Fonts.css"> 
+    <link rel="stylesheet" href="<?= BASE_URL ?>Assets/Fonts/Fonts.css"> 
 
-    <link rel="icon" href="../Assets/Images/IconTerms.webp">
+    <link rel="icon" href="<?= BASE_URL ?>Assets/Images/IconLime.webp">
 
    
     <!--URL Canónica-->
-    <link rel="canonical" href="https://www.marketmallorca.com/LegalTerms/Terms.html">
+    <link rel="canonical" href="https://www.marketmallorca.com/LegalTerms/Terms.php">
 
 
-    <!--Contenido ULRs-->
+    <!--Content ULRs-->
     <meta property="og:title" content="Términos y Condiciones de Uso de Market Mallorca">
 
     <meta property="og:description" content="Conoce las directrices para el uso de la plataforma de Market Mallorca y nuestros servicios de compra y entrega.">
 
-     <meta property="og:url" content="https://www.marketmallorca.com/LegalTerms/Terms.html"> 
+     <meta property="og:url" content="https://www.marketmallorca.com/LegalTerms/Terms.php"> 
 
     <meta property="og:type" content="website">
 

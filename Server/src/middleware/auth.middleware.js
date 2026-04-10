@@ -1,17 +1,16 @@
 const jwt = require('jsonwebtoken');
 
 
-// Clave secreta
+// Secret Key
 const JWT_SECRET = process.env.JWT_SECRET;
 
 
-// Autenticando Token
 const authenticateToken = (req, res, next) => {
 
     const authHeader = req.headers['authorization'];
     
-    // Comprobando la composición del encabezado
-    const token = authHeader && authHeader.startsWith('Bearer ') ? authHeader.split(' ')[1] : authHeader;
+    // Checking Header Composition
+    const token = authHeader?.replace('Bearer ', '');
 
 
     if (!token) {
@@ -21,14 +20,13 @@ const authenticateToken = (req, res, next) => {
     }
     
     if (!JWT_SECRET) {
-        console.error('ERROR: JWT_SECRET no definida en el entorno.');
         return res.status(500).json({ 
             message: 'Error de configuración del servidor.' 
         });
     }
 
 
-    // Comprobando Token
+    // Verifying Token
     jwt.verify(token, JWT_SECRET, (err, user) => {
 
         if (err) {
@@ -49,15 +47,16 @@ const authenticateToken = (req, res, next) => {
             });
         }
         
-        // Guardando contenido del token en la solicitud
+        // Saving Token Content In Request
         req.user = user;
 
+
+        // Going to the controller
         next();
     });
 };
 
 
 module.exports = {
-
     verifyToken: authenticateToken 
 };

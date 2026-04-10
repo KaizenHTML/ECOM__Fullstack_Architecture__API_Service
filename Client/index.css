@@ -1,22 +1,369 @@
-main{
+body{
 
-    width: 55%;
-
-    margin: auto;
-
-    background: #f8f9f9;
-
-    border: groove #e2e7ec .6rem;
-
-    border-radius: 2rem
+  background: #F8F9F9
 }
 
 
-.Text-Welcome{
+.Encapsulated-Banner{
 
-    font-size: 1.5rem;
+  gap: 3rem;
 
-    padding: 5%;
+  width: 50%;
 
-    font-family: "Afo"
+  margin: auto;
+
+  display: flex;
+
+  padding: 3rem;
+
+  margin-top: 6rem;
+
+  border-radius: .75rem;
+
+  background: #ffffff;
+
+  border: 1px #e1e4e8 solid
 }
+
+
+.Title-Banner{
+
+  margin: 0;
+
+  padding: 0
+}
+
+
+.Encapsulated-Links-Banner{
+
+  display: flex;
+
+  margin-top: 16%;
+
+  justify-content: space-between
+}
+
+
+.Img-Banner{
+
+  width: 25rem;
+
+  height: 22.7rem;
+
+  border-radius: .75rem
+}
+
+
+
+.Link-Banner{
+
+  color: #fff;
+
+  cursor: pointer;
+
+  padding: 4% 6%;
+
+  font-size: .9rem; 
+
+  font-family: "Outfit";
+
+  border-radius: .3rem;
+
+  background: #003366;
+
+  width: fit-content
+  ;
+  letter-spacing: 0.1rem
+}
+
+
+/* Cards--------------------------------------------------------------------------------------------*/
+
+.Title-Section-Cards{
+
+  font-size: 2.5rem;
+
+  margin-top: 8rem;
+  
+  text-align: center;
+
+  margin-bottom: 3rem
+}
+
+
+.Encapsulated-Cards{
+
+  width: 56.5%;
+
+  gap: 1.1rem;
+
+  margin: auto; 
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: space-between
+}
+
+
+.Feature-Card {
+
+  width: 180px;
+
+  height: auto;
+
+  position: relative;
+
+  background: #fff;
+
+  border-radius: 1.5rem;
+
+  padding: 2.5rem 2.5rem;
+  
+  border: 1px solid #e1e4e8;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+.Title-Cards{
+
+  margin-top: .9rem;
+  
+  margin-bottom: .8rem
+}
+
+
+.Text-Cards{
+
+  margin: 0;
+}
+
+
+/* SVG----------------------------------------------------------------------------------------------*/
+
+.Svg {
+
+  top: 0;
+  
+  left: 0;
+  
+  width: 100%;
+
+  height: 100%;
+
+  position: absolute;
+
+  pointer-events: none
+}
+
+
+.Border-Svg {
+
+  fill: none;
+
+  stroke-width: 2;
+
+  stroke: #E1E4E8
+}
+
+
+.Border-Glow {
+  
+  fill: none;
+
+  opacity: 0;
+
+  stroke-width: 4; 
+
+  stroke-dashoffset: 0;
+
+  stroke-linecap: round; 
+
+  stroke-dasharray: 150, 870; 
+
+  stroke: url(#gradientePastel) 
+}
+
+
+/* Phrase-------------------------------------------------------------------------------------------*/
+
+
+.Encapsulated-Card-Phrase{
+
+  width: 51%;
+
+  height: auto;
+
+  margin: auto;
+
+  text-align: center;
+
+  position: relative;
+
+  margin-top: 2.5rem;
+
+  background: #fff;
+
+  border-radius: 1.5rem;
+
+  padding: 2rem 2.5rem;
+
+  border: 1px solid #e1e4e8;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+.Phrase{
+
+  font-size: 1.1rem;
+}
+
+
+.Link-Phrase-Home{
+
+  display: block;
+
+  color: #003366;
+
+  margin-top: .8rem;
+
+  transition: all .8s ease;
+}
+
+
+.Link-Phrase-Home:hover{
+
+  transform: translateY(-.4rem) scale(1.1);
+
+}
+
+
+
+/* MÓVILES GRANDES / TABLETS VERTICAL*/
+@media (min-width: 630px) and (max-width: 1010px) {
+
+  .Encapsulated-Banner{
+
+    width: 63%;
+
+    flex-wrap: wrap
+  }
+
+
+  .Img-Banner{
+
+    min-width: 100%
+  }
+
+
+  .Title-Section-Cards {
+
+    font-size: 2rem;
+
+    margin-top: 4rem
+  }
+
+  .Feature-Card {
+        min-width: 80%; 
+       
+    }
+
+    .Encapsulated-Card-Phrase{
+
+      width: 63%;
+
+   
+    }
+
+   
+    
+    .Encapsulated-Cards{
+
+      width: 80%;
+
+      margin: auto;
+
+    
+      align-items: center;
+
+      align-content: center;
+
+      flex-direction: column;
+
+    }
+
+
+
+    
+    
+    
+}
+
+
+/* MÓVILES PEQUEÑOS (Menos de 480px) */
+@media (min-width: 330px) and (max-width: 630px) {
+    
+  .Encapsulated-Banner{
+
+    width: 68%;
+
+    flex-wrap: wrap;
+
+    padding: 2rem;
+  }
+
+
+  .Img-Banner{
+
+    max-width: 100%
+  }
+
+
+  .Title-Section-Cards {
+
+    font-size: 2rem;
+    
+    margin-top: 4rem
+  }
+
+  .Feature-Card {
+        min-width: 80%; 
+       
+    }
+
+    .Encapsulated-Card-Phrase{
+
+      width: 63%;
+
+   
+    }
+
+   
+    
+    .Encapsulated-Cards{
+
+      width: 80%;
+
+      margin: auto;
+
+    
+      align-items: center;
+
+      align-content: center;
+
+      flex-direction: column;
+
+    }
+
+
+  
+
+    
+
+
+
+}
+

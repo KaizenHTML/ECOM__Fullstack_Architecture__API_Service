@@ -1,256 +1,424 @@
-const { forgotPassword, resetPassword } = require('../services/auth.services')
-const { sendVerificationEmail, sendPasswordResetEmail  } = require('../utils/email');
-const errorHandler = require('../middleware/errorHandler');
-const userService = require('../services/user.services'); 
-const db = require('../config/db.config');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
 const crypto = require('crypto');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const userService = require('../services/user.services');
+const authService = require('../services/auth.services');
+const {sendVerificationEmail} = require('../utils/email');
+const {errorHandler} = require('../middleware/asyncHandler');
 
 
 
-const register = errorHandler(async (req, res, _next) => {
+// Register
+const register = errorHandler(async(req, res, _next) => {
 
     const { name, email, password, acceptterms } = req.body;
 
 
-    // Comprobando correo existente
+    // Checking Existing Email
     const existingUser = await userService.getUserByEmail(email);
-    if (existingUser) {
-        return res.status(400).json({ 
-            message: 'Cuenta existente con este correo.' 
-        });
-    }
 
-    // Hasheando contraseña
+    if (existingUser) {
+       
+        if (existingUser.verified) {
+            return res.status(400).json({
+                status: 'exists',
+                message: 'Ya tienes una cuenta con nosotros. ¡Inicia sesión!'
+            });
+        } 
+        
+        else {
+            const verificationToken = crypto.randomBytes(32).toString('hex');
+ 
+            await userService.updateVerificationToken(email, verificationToken  );
+
+            const verifyUrl = `http://localhost:4000/api/auth/verify-email?token=${verificationToken}&email=${email}`;
+            await sendVerificationEmail(email, name, verifyUrl);
+
+            return res.status(200).json({
+                status: 'pending_verification',
+                message: 'Ya tienes una cuenta pendiente. Te enviamos un nuevo enlace de activación'
+            });
+        }
+    }
+    
+
+    // Hashing Password
     const hashedPassword = await bcrypt.hash(password, 10);
 
-
-    // Generando token de verificación
-    const verificationToken = crypto.randomBytes(32).toString('hex'); 
+    // Generating Verification Token
+    const verificationToken = crypto.randomBytes(32).toString('hex');
     const hashedToken = await bcrypt.hash(verificationToken, 10);
 
 
-    // Registrando usuario no comprobado
+    // Registering User not Verified
     const newUser = await userService.registerUser(
         name, email, hashedPassword, acceptterms, false, hashedToken
-    ); 
+    );
 
-
-    // Enviando Email
+    // Sending Email
     const verifyUrl = `http://localhost:4000/api/auth/verify-email?token=${verificationToken}&email=${email}`;
     await sendVerificationEmail(email, name, verifyUrl);
 
-
-    res.status(201).json({ 
-        message: 'Registro exitoso. Revisa tu correo para verificar tu cuenta.', 
-        user: { 
-            id: newUser.id, 
-            name: newUser.name, 
+    res.status(201).json({
+        message: '¡Registro exitoso! Te enviamos un correo para activar tu cuenta.',
+        user: {
+            id: newUser.id,
+            name: newUser.name,
             email: newUser.email
         }
     });
 });
 
 
-const verifyEmail = async (req, res) => {
 
-    const { email, token } = req.query;
+// Checking Email
+const verifyEmail = errorHandler(async (req, res) => {
 
+    const {email, token} = req.query;
 
     if (!email || !token) {
         return res.status(400).send('Enlace inválido.');
     }
 
-    try {
-        const result = await db.query(
-            'SELECT verification_token, verified FROM users WHERE email = $1', [email]
-        );
+    const isVerified = await userService.verifyUserToken(email, token);
 
-
-        const isValid = await bcrypt.compare(token, result.rows[0].verification_token);
-
-        if (!isValid) {
-            return res.status(400).send('Token inválido');
-        }
-
-        // Actualiza el usuario
-        const updateResult = await db.query(
-            'UPDATE users SET verified = true, verification_token = NULL WHERE email = $1 RETURNING *',
-            [email]
-        );
-
-        res.redirect(`${process.env.CLIENT_URL}/login?verified=true`);
-
-    } catch (error) {
-        res.status(500).send('Error del servidor');
+    if (!isVerified) {
+        return res.status(400).send('Token inválido o usuario no encontrado');
     }
-};
+
+    res.redirect(`${process.env.CLIENT_URL}/login?verified=true`);
+});
 
 
 
-// Login usuario
+// Logging In
 const login = errorHandler(async (req, res, _next) => {
 
     const { email, password } = req.body;
 
-
-    // Buscando correos registrados
+    // Searching Registered Emails
     const user = await userService.getUserByEmail(email);
-    
+
     if (!user) {
-        return res.status(401).json({ 
-            message: 'Credenciales inválidas. Correo o contraseña incorrecta.' 
+        return res.status(404).json({
+            message: 'Credenciales inválidas. Correo o contraseña incorrecta'
         });
     }
 
-    if(!user.verified){
+    if (!user.verified) {
         return res.status(403).json({
             message: 'Por favor verifica tu correo antes de iniciar sesión.'
         });
     }
 
+    // Comparing Passwords
+    const isMatch = await bcrypt.compare(password, user.password_hash);
 
-    // Compararando contraseñas
-    const isMatch = await bcrypt.compare(password, user.password_hash); 
-    if (!isMatch) {
-        return res.status(401).json({ 
-            message: 'Credenciales inválidas. Correo o contraseña incorrecta' 
+    if (!isMatch ) {
+        return res.status(401).json({
+            message: 'Credenciales inválidas. Correo o contraseña incorrecta'
         });
     }
 
-
-    // Generando Token
+    // Generating Token
     const token = jwt.sign(
-        { id: user.id, name: user.name }, 
-        process.env.JWT_SECRET, 
+        { id: user.id, name: user.name },
+        process.env.JWT_SECRET,
         { expiresIn: process.env.TIME_TOKEN }
     );
 
-    res.status(200).json({ 
-        message: 'Login exitoso', 
-        token, 
-        user: { 
-            id: user.id, 
-            name: user.name, 
+    res.status(200).json({
+        message: '¡Bienvenido de vuelta!',
+        token,
+        user: {
+            id: user.id,
+            name: user.name,
             email: user.email,
-            created_at: user.created_at 
+            created_at: user.created_at,
+            profile_picture_url: user.profile_picture_url
         }
     });
 });
 
 
 
-// Enviando correo de cambio de contraseña
-const handleForgotPassword = async (req, res) => {
+// Sending Password Reset Email
+const handleForgotPassword = errorHandler(async (req, res) => {
 
-    const { email } = req.body;
+    const {email} = req.body;
 
-    try {
-        await forgotPassword(email);
-        res.status(200).json({
-            message: 'Correo de recuperación enviado.'
-        });
+    const user = await userService.getUserByEmail(email)
 
-    } catch(error) {
-        res.status(400).json({
-            message: error.message
+    if (!user) {
+         return res.status(404).json({
+            message: 'Correo electrónico no encontrado.'
+        })
+    }
+
+    await authService.forgotPassword(email);
+
+    res.status(200).json({
+        message: 'Si el correo existe en nuestro sistema, recibirás un enlace de recuperación pronto.'
+    });
+});
+
+
+
+// Reset Password
+const handleResetPassword = errorHandler(async (req, res) => {
+
+    const {token, newPassword} = req.body;
+
+    await authService.resetPassword(token, newPassword);
+    res.status(200).json({
+        message: 'Contraseña actualizada correctamente.'
+    });
+});
+
+
+
+// Checking Token 
+const verifyToken = errorHandler(async (req, res) => {
+
+    const userId = req.user?.id;
+
+    const user = await userService.getUserById(parseInt(userId));
+
+    if (!user) {
+        return res.status(404).json({
+            success: false,
+            message: 'Usuario no encontrado.'
         });
     }
-};
+
+    return res.status(200).json({
+        success: true,
+        message: 'Token válido. Acceso autorizado.',
+        user: {
+            id: user.id,
+            name: user.name,
+            email: user.email,
+            created_at: user.created_at,
+            profile_picture_url: user.profile_picture_url
+        }
+    });
+});
 
 
 
-// Recibiendo token con la contraseña nueva
-const handleResetPassword = async (req, res) => {
+// Deleting User
+const deleteAccount = errorHandler(async (req, res) => {
 
-    const { token, newPassword } = req.body;
+    const userId = req.user.id;
 
-    try {
-        await resetPassword(token, newPassword);
-        res.status(200).json({
-            message: 'Contraseña actualizada correctamente.'
-        });
+    const user = await userService.getUserById(userId);
 
-    } catch(error) {
-        res.status(400).json({
-            message: error.message
+    if (!user) {
+        return res.status(404).json({
+            message: 'Usuario no encontrado.'
         });
     }
-};
+
+    // Deleting User
+    await userService.deleteUserById(userId);
+
+    return res.status(200).json({
+        message: 'Cuenta eliminada exitosamente.'
+    });
+});
 
 
- 
-// Comprobando Token 
-const verifyToken = async (req, res) => {
-    
-    // Comprobando existencia de usuario
-    const userId = req.user?.id; 
 
+// Updating Profile
+const updateProfile = errorHandler(async (req, res) => {
 
-    if (userId) {
-        const user = await userService.getUserById(parseInt(userId));
+    const userId = req.user.id;
 
-        if (!user) {
-            return res.status(404).json({ 
-                success: false, message: 'Usuario no encontrado.' 
+    const { name, email } = req.body;
+
+    // Verifying Email
+    if (email) {
+
+        const existingUser = await userService.getUserByEmail(email);
+
+        if (existingUser && existingUser.id !== userId) {
+            return res.status(400).json({
+                message: 'Este correo ya está en uso por otra cuenta.'
             });
         };
-        
-        return res.status(200).json({
-            success: true,
-            message: 'Token válido. Acceso autorizado.',
-            user: { 
-                id: user.id, 
-                name: user.name, 
-                email: user.email, 
-                created_at: user.created_at
-            }
+    }
+
+
+
+    // Updating User
+    const updatedUser = await userService.updateUser(userId, name, email);
+
+    if (!updatedUser) {
+        return res.status(404).json({
+            message: 'Usuario no encontrado.'
         });
-    };
-};
+    }
+
+    return res.status(200).json({
+        message: 'Perfil actualizado correctamente.',
+        data: updatedUser
+    });
+});
 
 
-// Eliminando usuario
-const deleteAccount = async (req, res) => {
 
-    const userId = req.user.id
+// Updating Photo Profile
+const updateAvatar = errorHandler(async (req, res) => {
+
+    const userId = req.user?.id;
+
+    const { profilePictureUrl } = req.body;
+
+    if (!profilePictureUrl){
+        return res.status(400).json({
+            success: false,
+            message: 'No se recibió la URL de la imagen.'
+        });
+    }
+
+    // Calling service
+    const updatedUser = await userService.updateProfilePicture(userId, profilePictureUrl);
+
+    if (!updatedUser) {
+        return res.status(404).json({
+            success: false,
+            message: 'Usuario no encontrado.'
+        });
+    }
+
+    res.status(200).json({
+        success: true, 
+        message: 'Foto de perfil actualizada con éxito.',
+        data: updatedUser
+    });
+});
+
+
+
+// Signing In With Google
+const googleLogin = errorHandler(async (req, res) => {
+        
+    const {id_token} = req.body;
+
+    const {token, user} = await authService.googleLogin(id_token);
+
+    res.status(200).json({
+        message: '¡Bienvenido de vuelta!',
+        token,
+        user: {
+            id: user.id,
+            name: user.name,
+            email: user.email,
+            created_at: user.created_at,
+            profile_picture_url: user.profile_picture_url
+        }
+    });
+});
+
+
+
+// Add Address
+const addAddress = errorHandler(async (req, res) => {
 
     try {
-        
-        const user = await userService.getUserById(userId);
 
-        if (!user) {
-            res.status(404).json({
-                message: 'Usuario no encontrado.'
+        const {complexName, tower, apartment} = req.body;
+
+        const userId = req.user?.id; 
+
+        // Validating Fields
+        if (!complexName || !tower || !apartment) {
+            return res.status(400).json({
+                success: false,
+                message: 'Todos los campos son obligatorios.'
             });
         }
 
-        // Eliminando usuario
-        const query = 'DELETE FROM users WHERE id = $1';
-        await db.query(query, [userId]);
+        // Sending The Separate Data To The Service
+        const newAddress = await userService.addAddress(userId, { 
+            conjunto, 
+            torre, 
+            apartamento 
+        });
 
-        return res.status(200).json({
-            message: 'Cuenta eliminada exitosamente.'
+        res.status(201).json({ 
+            success: true,
+            message: 'Dirección agregada con éxito.',
+            user: newAddress 
         });
 
 
-    } catch(error) {
-        console.error('Error al eliminar la cuenta:', error);
-        return res.status(500).json({
-            message: 'Error al eliminar la cuenta'
+    } catch (error) {
+      if (error.code === '23505') {
+
+        return res.status(404).json({
+          success: false,
+          message: 'Esta dirección está registrada en tu perfil.'
         });
+      }
+
+      return res.status(500).json({
+        success: false,
+        message: 'Error interno.'
+      });
     }
-};
+});
+
+
+
+// Get Address
+const getUserAddresses = errorHandler(async (req, res) => {
+
+    const userId = req.user?.id; 
+
+    const addresses = await userService.getUserAddresses(userId);
+
+    res.status(200).json({
+        success: true,
+        user: addresses 
+    });
+});
+
+
+
+// Delete Address
+const deleteAddress = errorHandler (async (req, res) => {
+
+    const userId = req.user?.id;
+
+    const { id } = req.body;
+
+
+    await userService.deleteAddress(
+        userId, 
+        id
+    );
+
+    res.status(200).json({
+        success: true,
+        message: 'Dirección eliminada con éxito.'
+    });
+});
+
 
 
 module.exports = {
-
+    googleLogin,
     register,
     verifyEmail,
     login,
+    verifyToken,
+    updateProfile,
+    updateAvatar,
+    deleteAccount,
     handleForgotPassword,
     handleResetPassword,
-    verifyToken,
-    deleteAccount,
+    addAddress, 
+    getUserAddresses,
+    deleteAddress
 };

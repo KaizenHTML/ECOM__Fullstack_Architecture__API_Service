@@ -1,14 +1,32 @@
+# Dependencias
 /node_modules
-/npm-debug.logs*
-/Yarn-error.log
-/dist
-/build
-.env
 /pids
 /logs
 *.pid
 *.seed
 *.log
-.DS_STORE
+/npm-debug.log*
+/yarn-error.log
+/yarn-debug.log*
+
+# Producción
+/dist
+/build
+
+# Secretos 
+.env
+.env.local
+.env.*.local
+
+# Sistema Operativo
+.DS_Store
+Thumbs.db
+
+# Editor
 .vscode/
-.nodemon
+.idea/
+*.swp
+*.swo
+
+# Tests
+coverage/

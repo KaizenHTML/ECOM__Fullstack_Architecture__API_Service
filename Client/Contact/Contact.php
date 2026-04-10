@@ -1,35 +1,42 @@
+<!--Base URL-->
+<?php 
+    require_once dirname(__DIR__) . '/config.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="es"> 
 
 <head> 
 
-    <title> Contáctanos | Market Mallorca </title>
-
     <meta charset="UTF-8">
+
+    <title> Contáctanos | Market Mallorca </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!--Descripción página-->
+
+    <!--Description Page-->
     <meta name="description" content="Contacta a Market Mallorca en Ibagué para consultas, pedidos o soporte. Encuentra nuestra dirección, teléfonos y correo electrónico. ¡Estamos listos para ayudarte!">
 
     
     <!--CSS-->
-    <link rel="icon" href="../Assets/Images/IconLime.webp">
+    <link rel="icon" href="<?= BASE_URL ?>Assets/Images/IconLime.webp">
 
-    <link rel="stylesheet" href="../Assets/Fonts/Fonts.css"> 
+    <link rel="stylesheet" href="<?= BASE_URL ?>Assets/Fonts/Fonts.css"> 
 
     <link rel="stylesheet" href="Contact.css"> 
 
-    <link rel="stylesheet" href="../Header/Header.css"> 
+    <link rel="stylesheet" href="<?= BASE_URL ?>Header/Header.css"> 
 
-    <link rel="stylesheet" href="../FooterPage/FooterPage.css"> 
+    <link rel="stylesheet" href="<?= BASE_URL ?>FooterPage/FooterPage.css"> 
 
 
-    <!--URL canonica-->
+    <!--URL Canonica-->
     <link rel="canonical" href="https://www.marketmallorca.com/Contact/Contact.php"> 
     
     
-    <!--Contenido enlaces-->
+    <!--Content URLs-->
     <meta property="og:title" content="Contáctanos | Market Mallorca">
 
     <meta property="og:description" content="¿Tienes preguntas, sugerencias o necesitas ayuda? Contáctanos en Market Mallorca."> 
@@ -43,11 +50,13 @@
 
 <body> 
 
-    <!--Barra de navegación-->
-    <?php include '../Header/Header.php'; ?>
+    <!--Header-->
+    <?php 
+        require_once BASE_PATH . '/Header/Header.php'; 
+    ?>
 
 
-    <!--Encapsulado de página-->
+    <!--Encapsulated Page-->
     <main class="Encapsulated-page">
 
         <!--Google Maps-->
@@ -55,10 +64,10 @@
         </iframe>
 
 
-        <!--Encapsulado pequeño-->
+        <!--Encapsulated Small-->
         <section class="Encapsulated-Small">
 
-            <!--Sección contactos-->
+            <!--Section Contacts-->
             <section class="Section-Contacts">
 
                 <h2> Contactos </h2>
@@ -76,7 +85,7 @@
             </section>
 
 
-            <!--Sección horas-->
+            <!--Section Hours-->
             <section class="Section-Hours">
 
                 <h2 class="Title-Hours"> Horario de atención </h2>
@@ -94,8 +103,20 @@
     </main> 
 
 
-    <!--Pie de página-->
-    <?php include '../FooterPage/FooterPage.php' ?>
+    <!--Footer-->
+    <?php 
+        require_once BASE_PATH . '/FooterPage/FooterPage.php'; 
+    ?>
+
+
+    <!--Enlace Gsap-->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script> 
+
+    <!--Enlace SplitText-->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script> 
+
+    <!--Enlace Tween Header-->
+    <script src="<?= BASE_URL ?>/Scripts/Tween-Header.js" defer></script> 
 
 </body>
 

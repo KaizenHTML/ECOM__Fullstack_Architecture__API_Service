@@ -1,8 +1,10 @@
-// Middleware para manejar errores en funciones asíncronas
+// Middleware For Handling Errors In Async Functions
 const errorHandler = (fn) => (req, res, next) => {
 
     Promise.resolve(fn(req, res, next)).catch(next)
 };
 
 
-module.exports = errorHandler;
+module.exports = {
+    errorHandler
+};

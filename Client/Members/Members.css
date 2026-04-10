@@ -1,33 +1,39 @@
-body{
 
-    font-family: "Afo"
+p{
+
+    color: #333;
+
+    margin-top: 1rem;
+
+    font-size: 1rem;
+
+    text-wrap: pretty
 }
 
-p, .Member-Position{
 
-    font-size: 1.3rem
-}
-
-
-/* Encapsulado página---------------------------------------------------------------------------------*/
+/* Encapsulated Page--------------------------------------------------------------------------------*/
 
 .Encapsulated-Page{
 
     display: flex;
 
-    flex-wrap: wrap
+    flex-wrap: wrap;
 }
 
 
 .Title-Members, .Title-Purpose-Supermarket{
-    
-    text-align: center;
 
-    font-size: 6rem
+    margin-top: 6rem;
+    
+    font-size: 3.5rem;
+
+    margin-bottom: 3rem;
+
+    text-align: center
 }
 
 
-/* Secciones cartas-----------------------------------------------------------------------------------*/
+/* Section Cards-----------------------------------------------------------------------------------*/
 
 .Section-Cards-Members, .Section-Card-Purpose{
 
@@ -37,13 +43,7 @@ p, .Member-Position{
 }
 
 
-.Section-Members{
-
-    margin-bottom: 8%
-}
-
-
-/* Cartas---------------------------------------------------------------------------------------------*/
+/* Cards--------------------------------------------------------------------------------------------*/
 
 .Cards{
 
@@ -51,61 +51,68 @@ p, .Member-Position{
     
     text-align: center;
 
-    background: #f8f9f9;
+    border-radius: .75rem;
 
-    padding: 2%;
+    background: #ffffff;
 
-    border: .5rem #e2e7ec groove;
+    padding: 2.8% 2% 1% 2%;
 
-    border-radius: 1rem;
+    border: 1px #e1e4e8 solid;
 
-    transition: transform 1.5s ease;
+    transition: all 0.3s ease;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05)
 }
 
 
 .Cards:hover{
 
-    background: #fff;
+    transform: translateY(-8px) scale(1.02);
 
-    transform: scale(1.05) 
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); 
 }
 
 
-/* Contenido cartas sección miembros------------------------------------------------------------------*/
+/* Member Cards--------------------------------------------------------------------------------------*/
 
 .Member-Photos{
 
-    width: 10.5rem;
+    width: 9rem;
 
-    height: 10.5rem;
+    height: 9rem;
 
     border-radius: 50%;
 
-    box-shadow: 0 0 0.5rem #abb2b9
+    box-shadow: 0 0 0.1rem #abb2b9
+}
+
+
+h3{
+
+    margin: 0;
+
+    margin-top: 11%;
+
+    font-size: 1.1rem
 }
 
 
 .Member-Position{
 
-    color: #abb2b9;
+    margin: 3%;
+    
+    font-size: 1.1rem;
 
-    margin-top: 10%;
-
-    display: block
+    color: #abb2b9
 }
 
 
-h4{
-
-    font-size: 1.5rem;
-
-    margin: 0
-}
-
-
-/* Contenido cartas sección propósito-----------------------------------------------------------------*/
+/* Purpose Cards---------------------------------------------------------------------------------------*/
 
 .Title-Cards-Purpose{
 
-    font-size: 3rem
+    margin: 6%;
+
+    font-size: 2rem
 }
+

@@ -1,65 +1,86 @@
-a{
+a, p, li,.Methods-Contacts{
 
-    color: #000
-}
-
-h2{
-
-    margin: 0;
-
-    font-size: 1.8rem;
-
-    text-align: center
+    color: #333
 }
 
 
-/* Encapsulado página --------------------------------------------------------------------------------*/
+body{
+
+    background: #F8F9F9;
+}
+
+
+/* Encasulated Page--------------------------------------------------------------------------------*/
 
 .Encapsulated-page{
 
-    display: flex
+    gap: 3%;  
+
+    padding: 0 3%;
+
+    display: flex;
+
+    margin-top: 8rem;
+
+    align-items: stretch; 
+
+    justify-content: center
 }
 
 
 .Maps{
 
-    width: 45%;
+    width: 50%;
 
-    height: 27.5rem;
+    border-radius: .75rem;
 
-    border: #e2e7ec groove 0.6rem;
+    border: 1px #e1e4e8 solid;
 
-    margin: 3%
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 
-/* Encapsulado pequeño -------------------------------------------------------------------------------*/
+/* Encapsulated Small-----------------------------------------------------------------------------*/
 
 .Encapsulated-Small{
 
-    width: 44%;
+    width: 44.7%;
 
     display: flex;
 
-    flex-direction: column;
-
-    margin-top: 3%
+    flex-direction: column
 }
 
 
-/* Secciones -----------------------------------------------------------------------------------------*/
+/* Sections---------------------------------------------------------------------------------------*/
 
 .Section-Contacts, .Section-Hours{
 
-    background: #f8f9f9;
+    border-radius: .75rem;
 
-    border: groove #e2e7ec 0.6rem;
-    
+    background: #ffffff;
+
+    border: 1px #e1e4e8 solid;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+.Section-Hours{
+
+    height: 7rem;
+
+    padding: 3% 8%
+}
+
+
+.Section-Contacts{
+
+    height: 10rem;
+
     margin-bottom: 5%;
 
-    font-family: "Afo";
-
-    padding: 2.5%
+    padding: 1.8rem;
 }
 
 
@@ -69,19 +90,21 @@ h2{
 }
 
 
-.Section-Contacts{
+h2{
 
-    height: 12rem
+    margin: 0;
+
+    margin-top: 2%;
+
+    margin-bottom: 1%;
+
+    font-size: 1.2rem;
+
+    text-align: center
 }
 
 
-.Section-Hours{
-
-    height: 8rem
-}
-
-
-/* Contenido sección contactos------------------------------------------------------------------------*/
+/* Content Section Contacts----------------------------------------------------------------------*/
 
 .Mail::marker{
 
@@ -101,23 +124,11 @@ h2{
 
 .Mail, .Number, .Addres, .Hours{
 
-    font-size: 1.3rem  
+    font-size: 1rem  
 }
 
 
-.Methods-Contacts{
-
-    color: #000
-}
-
-
-/* Contenido sección horas----------------------------------------------------------------------------*/
-
-.Title-Hours{
-
-    margin-bottom: 1.8%
-}
-
+/* Content Section Hours-------------------------------------------------------------------------*/
 
 .Encapsulated-Hours{
 

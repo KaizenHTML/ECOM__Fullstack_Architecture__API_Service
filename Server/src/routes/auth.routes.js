@@ -1,22 +1,28 @@
 const router = require('express').Router();
-const authController = require('../controllers/auth.controllers'); 
-
-// Middleware de los Tokens
-const { verifyToken } = require('../middleware/auth.middleware'); 
+const { verifyToken } = require('../middleware/auth.middleware');
+const authController = require('../controllers/auth.controllers');
 
 
-// Rutas Públicas
+// AUTHENTICATION ROUTES (PUBLIC)
 router.post('/register', authController.register);
-router.get('/verify-email', authController.verifyEmail);
 router.post('/login', authController.login);
-router.post('/forgot-password',  authController.handleForgotPassword);
-router.post('/reset-password', authController.handleResetPassword)
+router.post('/google-login', authController.googleLogin);
+router.get('/verify-email', authController.verifyEmail);
+router.post('/forgot-password', authController.handleForgotPassword);
+router.post('/reset-password', authController.handleResetPassword);
 
 
-// Rutas protegidas
-router.get('/verify-token', verifyToken, authController.verifyToken); 
-router.delete('/delete-account', verifyToken, authController.deleteAccount);
+// PROFILE ROUTES (PROTECTED)
+router.get('/verify-token', verifyToken, authController.verifyToken);
+router.put('/profile', verifyToken, authController.updateProfile);
+router.put('/profile/avatar', verifyToken, authController.updateAvatar);
+router.delete('/account', verifyToken, authController.deleteAccount);
+
+
+// DIRECTIONS ROUTES
+router.post('/address', verifyToken, authController.addAddress);
+router.get('/address', verifyToken, authController.getUserAddresses);
+router.delete('/address/delete', verifyToken, authController.deleteAddress);
 
 
 module.exports = router;
-  

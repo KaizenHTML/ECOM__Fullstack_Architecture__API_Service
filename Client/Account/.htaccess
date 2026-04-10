@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+
+  RewriteEngine On
+  RewriteBase /ECOM/Client/Account/
+
+  # If they go to index.html, redirect to the root folder (so that React Router works)
+  RewriteRule ^index\.html$ . [R=301,L]
+
+  # Rules for SPA
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /ECOM/Client/Account/index.html [L]
+  
+</IfModule>

@@ -1,10 +1,13 @@
-const { sendPasswordResetEmail } = require('../utils/email');
+const db = require('../config/db.config');
 const crypto = require('crypto');
 const bcrypt = require('bcrypt');
-const db = require('../config/db.config');
+const jwt = require('jsonwebtoken')
+const userService = require('./user.services')
+const { OAuth2Client } = require('google-auth-library');
+const { sendPasswordResetEmail } = require('../utils/email');
 
 
-// Guardando token en password_resets
+// Saving Token in password_resets
 const savePasswordResetToken = async (email, token, expiry) => {
 
   const query = `
@@ -13,9 +16,8 @@ const savePasswordResetToken = async (email, token, expiry) => {
     ON CONFLICT (email) DO UPDATE
     SET token = $2, expires_at = $3, created_at = NOW();
   `;
-  
-  try {
 
+  try {
     await db.query(query, [email, token, expiry]);
 
   } catch (error) {
@@ -25,13 +27,38 @@ const savePasswordResetToken = async (email, token, expiry) => {
 };
 
 
-// Obteniendo token de recuperación
+
+// Creating Temporary Token
+const forgotPassword = async (email) => {
+
+  const user = await userService.getUserByEmail(email);
+
+  if (!user) {
+    throw new Error('Usuario no encontrado');
+  }
+
+  // Creating The Temporary Token
+  const resetToken = crypto.randomBytes(32).toString('hex');
+  const resetTokenExpiry = new Date(Date.now() + 1800000);
+
+  await savePasswordResetToken(email, resetToken, resetTokenExpiry);
+
+  // Password Change File URL
+  const resetUrl = `${process.env.CLIENT_URL}/recover-password?token=${resetToken}`;
+
+  // Mail Sending Parameters
+  await sendPasswordResetEmail(user.email, resetUrl);
+};
+
+
+// Getting Recovery Token
 const getPasswordResetByToken = async (token) => {
 
   const query = `
-    SELECT email, expires_at FROM password_resets
-    WHERE token = $1 AND expires_at > NOW();`;
-  
+      SELECT email, expires_at FROM password_resets
+      WHERE token = $1 AND expires_at > NOW();
+  `;
+
   try {
     const result = await db.query(query, [token]);
     return result.rows[0] || null;
@@ -43,11 +70,15 @@ const getPasswordResetByToken = async (token) => {
 };
 
 
-// Eliminando token después de usarlo
+
+// Removing Token After Use
 const deletePasswordResetToken = async (email) => {
 
-  const query = 'DELETE FROM password_resets WHERE email = $1;';
-  
+  const query = `
+      DELETE FROM password_resets 
+      WHERE email = $1; 
+  `;
+
   try {
     await db.query(query, [email]);
 
@@ -58,34 +89,8 @@ const deletePasswordResetToken = async (email) => {
 };
 
 
-// Creando token temporal - Enviando correo
-const forgotPassword = async (email) => {
 
-  const { getUserByEmail } = require('./user.services'); 
-
-  const user = await getUserByEmail(email);
-
-  if (!user) {
-    throw new Error('Usuario no encontrado');
-  }
-
-  // Creando token temporal
-  const resetToken = crypto.randomBytes(32).toString('hex');
-  const resetTokenExpiry = new Date(Date.now() + 3600000); 
-
-  // Guardando en la bd
-  await savePasswordResetToken(email, resetToken, resetTokenExpiry);
-
-
-  const resetUrl =`${process.env.CLIENT_URL}/recover-password?token=${resetToken}`;
-
-  // Parametros de envío de correo
-  await sendPasswordResetEmail(user.email, resetUrl);
-
-};
-
-
-// Actualiza contraseña - Elimina token temporal
+// Updating password
 const resetPassword = async (token, newPassword) => {
 
   const resetRecord = await getPasswordResetByToken(token);
@@ -94,8 +99,21 @@ const resetPassword = async (token, newPassword) => {
     throw new Error('Token inválido o expirado');
   }
 
-  // Hasheando contraseña  
-  const hashedPassword = await bcrypt.hash(newPassword, 12);
+
+
+  // Getting User's Current Password
+  const currentUser = await userService.getUserByEmail(resetRecord.email);
+
+  // Comparing The New Password With The Current One
+  const isSamePassword = await bcrypt.compare(newPassword, currentUser.password_hash);
+
+  if (isSamePassword) {
+    throw new Error('La nueva contraseña no puede ser la misma que la actual');
+  }
+
+
+  // Hashing Password
+  const hashedPassword = await bcrypt.hash(newPassword, 10);
 
   const query = `
     UPDATE users
@@ -104,11 +122,9 @@ const resetPassword = async (token, newPassword) => {
   `;
 
   try {
-
-    // Guardando contraseña en la bd
     await db.query(query, [hashedPassword, resetRecord.email]);
-    
-    // Eliminando token de la bd
+
+    // Removing Token From The Database
     await deletePasswordResetToken(resetRecord.email);
 
   } catch (error) {
@@ -118,7 +134,62 @@ const resetPassword = async (token, newPassword) => {
 };
 
 
+
+// Creating Access Keys
+const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
+
+const generateAuthToken = (user) => {
+    return jwt.sign(
+        { 
+          id: user.id, 
+          email: user.email 
+        },
+        process.env.JWT_SECRET,
+        { expiresIn: '45m' }
+    );
+};
+
+
+
+// Validating The passport Provided by Google
+const googleLogin = async (id_token) => {
+    
+    const ticket = await client.verifyIdToken({
+        idToken: id_token,
+        audience: process.env.GOOGLE_CLIENT_ID,
+    });
+
+    const payload = ticket.getPayload();
+    if (!payload) {
+        throw new Error('Token de Google inválido o no verificado.');
+    }
+    
+
+    const { name, email, picture } = payload;
+    
+    let user = await userService.getUserByEmail(email);
+
+    if (!user) {
+        user = await userService.createUserFromGoogle({
+            name, 
+            email,
+            profile_picture_url: picture 
+        });
+
+    } else {
+        if (!user.profile_picture_url) {
+            await userService.updateProfilePicture(user.id, picture);
+            user.profile_picture_url = picture; 
+        } 
+    }
+    
+    const token = generateAuthToken(user);
+    return { token, user };
+};
+
+
 module.exports = {
-    forgotPassword,
-    resetPassword,
+  forgotPassword,
+  resetPassword,
+  googleLogin,
 };

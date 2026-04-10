@@ -1,36 +1,42 @@
+<!--Base URL-->
+<?php 
+    require_once dirname(__DIR__) . '/config.php';
+?>
+
 <!DOCTYPE html>
 <html lang="es"> 
 
 <head> 
-        
-    <title> Política de Privacidad | Market Mallorca </title>
-
+       
     <meta charset="UTF-8">
+
+    <title> Política de Privacidad | Market Mallorca </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--Descripción página-->
+
+    <!--Description Page-->
     <meta name="description" content="Conoce la política de privacidad de Market Mallorca. Infórmate sobre cómo protegemos y gestionamos tus datos personales al usar nuestros servicios.">
 
 
     <!--CSS-->
     <link rel="stylesheet" href="PrivacyPolicy.css">
 
-    <link rel="stylesheet" href="../Assets/Fonts/Fonts.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>Assets/Fonts/Fonts.css">
 
-    <link rel="Icon" href="../Assets/Images/IconPolicy.webp"> 
+    <link rel="Icon" href="<?= BASE_URL ?>Assets/Images/IconLime.webp"> 
 
     
     <!--URL Canónica-->
-    <link rel="canonical" href="http://marketmallorca/LegalTerms/PrivacyPolicy.html">
+    <link rel="canonical" href="https://www.marketmallorca.com/LegalTerms/PrivacyPolicy.php">
 
 
-    <!--Contenido ULRs-->
+    <!--Content ULRs-->
     <meta property="og:title" content="Política de Privacidad de Market Mallorca">
 
     <meta property="og:description" content="Información esencial sobre la protección de tus datos en Market Mallorca. Tu privacidad es nuestra prioridad.">
 
-    <meta property="og:url" content="http://marketmallorca/LegalTerms/PrivacyPolicy.html">
+    <meta property="og:url" content="https://www.marketmallorca.com/LegalTerms/PrivacyPolicy.php">
 
     <meta property="og:type" content="website">
 
@@ -53,12 +59,12 @@
 
                 <h2> 1. Información que Recopilamos </h2>
 
-                <p> En Market Mallorca, recopilamos información con el fin de procesar tus pedidos, mejorar tu
-                experiencia de compra y comprender cómo nuestros usuarios interactúan con nuestra plataforma. La
-                información que podemos recopilar incluye: 
+                <p> En Market Mallorca, recopilamos información con el fin de procesar tus pedidos, mejorar tu experiencia de compra y comprender cómo nuestros usuarios interactúan con nuestra plataforma. La información que podemos recopilar incluye: 
                 </p>
                 
-                <p> <strong> Información de Identificación Personal (IIP): </strong> Para poder realizar compras en Market Mallorca, los usuarios deben registrarse y crear una cuenta. Al hacerlo, recopilamos la siguiente información personal esencial:</p>
+                <p> 
+                    <strong> Información de Identificación Personal (IIP): </strong> Para poder realizar compras en Market Mallorca, los usuarios deben registrarse y crear una cuenta. Al hacerlo, recopilamos la siguiente información personal esencial:
+                </p>
 
                 <ul>
                     <li> Tu nombre. </li>
@@ -67,10 +73,7 @@
                     <li> Una contraseña. </li>   
                 </ul>
 
-                <p> <strong> Datos de Uso y Analíticas: </strong> Para mejorar continuamente la funcionalidad y
-                el diseño de nuestro sitio web, utilizamos herramientas de análisis web (como Google Analytics y/o las
-                provistas por nuestro proveedor de hosting). Esto nos permite recopilar información sobre cómo interactúas
-                con nuestro sitio, incluyendo:
+                <p> <strong> Datos de Uso y Analíticas: </strong> Para mejorar continuamente la funcionalidad y el diseño de nuestro sitio web, utilizamos herramientas de análisis web (como Google Analytics y/o las provistas por nuestro proveedor de hosting). Esto nos permite recopilar información sobre cómo interactúas con nuestro sitio, incluyendo:
                 </p>
 
                 <ul>
@@ -92,14 +95,16 @@
                 <p> La información recopilada se utiliza exclusivamente para los siguientes propósitos: </p>
 
                 <ul>
-                    <li> <strong> Procesamiento y Gestión de Pedidos: </strong> Tu nombre, dirección, número de contacto y
-                    detalles de los productos son fundamentales para registrar, procesar y entregar los pedidos que solicitas a través de nuestro catálogo. 
+                    <li> 
+                        <strong>Procesamiento y Gestión de Pedidos:</strong> Tu nombre, dirección y son fundamentales para registrar y entregar tus pedidos. Asimismo, tu correo electrónico se utilizará primordialmente para notificaciones de cuenta y estado de pedidos. Solo enviaremos material promocional o boletines de noticias si has aceptado explícitamente recibirlo a través de nuestras opciones de suscripción.
                     </li>
 
-                    <li> <strong> Mejora del Servicio: </strong> Para comprender mejor cómo los usuarios interactúan con nuestro sitio y con nuestros productos, lo que nos permite optimizar el diseño, el contenido y la funcionalidad de Market Mallorca para ofrecerte una mejor experiencia de compra. 
+                    <li> 
+                        <strong> Mejora del Servicio: </strong> Para comprender mejor cómo los usuarios interactúan con nuestro sitio y con nuestros productos, lo que nos permite optimizar el diseño, el contenido y la funcionalidad de Market Mallorca para ofrecerte una mejor experiencia de compra. 
                     </li>
 
-                    <li> <strong> Análisis de Rendimiento y Seguridad: </strong> Para monitorear el rendimiento general del sitio web, diagnosticar posibles problemas técnicos y proteger la integridad y seguridad de nuestra plataforma y de la información de nuestros usuarios. 
+                    <li> 
+                        <strong> Análisis de Rendimiento y Seguridad: </strong> Para monitorear el rendimiento general del sitio web, diagnosticar posibles problemas técnicos y proteger la integridad y seguridad de nuestra plataforma y de la información de nuestros usuarios. 
                     </li>
                 </ul>
 
@@ -110,23 +115,17 @@
 
                 <h2> 3. Compartición y Almacenamiento de Información </h2>
 
-                <p> Market Mallorca se compromete a no vender, alquilar ni divulgar tu información personal a
-                terceros para fines de marketing directo sin tu consentimiento explícito. Tu nombre y dirección se utilizan
-                internamente únicamente para la gestión de tu pedido y la comunicación relacionada con el mismo.
+                <p> Market Mallorca se compromete a no vender, alquilar ni divulgar tu información personal a terceros para fines de marketing directo sin tu consentimiento explícito. Tu nombre y dirección se utilizan internamente únicamente para la gestión de tu pedido y la comunicación relacionada con el mismo.
                 </p>
 
-                <p> Podemos compartir tu información con proveedores de servicios de confianza (como nuestro
-                proveedor de hosting, servicios de análisis web o plataformas de envío) que nos asisten en la operación de
-                nuestro negocio y en la prestación de nuestros servicios. Estos terceros están contractualmente obligados a
-                proteger tu información y a utilizarla únicamente para los fines específicos para los que han sido
-                contratados. 
+                <p> Podemos compartir tu información con proveedores de servicios de confianza (como nuestro proveedor de hosting, servicios de análisis web o plataformas de envío) que nos asisten en la operación de nuestro negocio y en la prestación de nuestros servicios. Estos terceros están contractualmente obligados a proteger tu información y a utilizarla únicamente para los fines específicos para los que han sido contratados. 
                 </p>
 
-                <p> Aplicamos medidas de seguridad técnicas y organizativas adecuadas para proteger la
-                información que recopilamos contra el acceso no autorizado, la divulgación, alteración o destrucción.
+                <p> Aplicamos medidas de seguridad técnicas y organizativas adecuadas para proteger la información que recopilamos contra el acceso no autorizado, la divulgación, alteración o destrucción. 
                 </p>
 
-                <p> Market Mallorca conservará su información personal durante el tiempo necesario para cumplir con los fines descritos en esta política y según lo exija la ley. </p>
+                <p> Market Mallorca conservará su información personal durante el tiempo necesario para cumplir con los fines descritos en esta política y según lo exija la ley. 
+                </p>
             
             </section>
 
@@ -172,16 +171,24 @@
                 </p>
 
                 <ul>
-                    <li> <strong> Derecho de Acceso:</strong> Conocer los datos personales que Market Mallorca tiene sobre ti.</li>
-
-                    <li> <strong> Derecho de Rectificación:</strong> Solicitar la corrección de datos incompletos, inexactos o desactualizados.</li>
-
-                    <li> <strong> Derecho de Supresión:</strong> Solicitar la eliminación de tus datos personales de nuestrasbases de datos, siempre y cuando no exista una obligación legal o contractual que impida su supresión. 
+                    <li> 
+                        <strong> Derecho de Acceso:</strong> Conocer los datos personales que Market Mallorca tiene sobre ti.
                     </li>
 
-                    <li> <strong> Derecho de Oposición:</strong> Oponerte al tratamiento de tus datos personales en determinadas circunstancias.</li>
+                    <li> 
+                        <strong> Derecho de Rectificación:</strong> Solicitar la corrección de datos incompletos, inexactos o desactualizados.
+                    </li>
 
-                    <li> <strong> Derecho a la Revocación del Consentimiento:</strong> Revocar el consentimiento que hayas otorgado para el tratamiento de tus datos personales en cualquier momento. 
+                    <li> 
+                        <strong> Derecho de Supresión:</strong> Solicitar la eliminación de tus datos personales de nuestrasbases de datos, siempre y cuando no exista una obligación legal o contractual que impida su supresión. 
+                    </li>
+
+                    <li> 
+                        <strong> Derecho de Oposición:</strong> Oponerte al tratamiento de tus datos personales en determinadas circunstancias.
+                    </li>
+
+                    <li> 
+                        <strong> Derecho a la Revocación del Consentimiento:</strong> Revocar el consentimiento que hayas otorgado para el tratamiento de tus datos personales en cualquier momento. 
                     </li>
                 </ul>
 
@@ -206,12 +213,13 @@
                 <h2> 8. Contacto </h2>
 
                 <p> Si tienes alguna pregunta, inquietud o necesitas más información sobre esta Política de
-                Privacidad o sobre nuestras prácticas de manejo de datos, no dudes en ponerte en contacto con nosotros a través de:  </p>
+                Privacidad o sobre nuestras prácticas de manejo de datos, no dudes en ponerte en contacto con nosotros a través de:  
+                </p>
 
                 <ul>
-                    <li> <strong> Email: </strong> <a href="mailto:cardonaarizasas@gmail.com"> cardonaarizasas@gmail.com </a> </li>
-
-                    <li> <strong>O vía WhatsApp:</strong> A través del enlace directo en nuestra página. </li>
+                    <li> 
+                        <strong> Email: </strong> <a href="mailto:cardonaarizasas@gmail.com"> cardonaarizasas@gmail.com </a> 
+                    </li>
                 </ul>
 
             </section>

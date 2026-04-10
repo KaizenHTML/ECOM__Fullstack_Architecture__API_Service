@@ -1,36 +1,44 @@
+<!--Base URL-->
+<?php 
+    require_once dirname(__DIR__) . '/config.php'; 
+?>
+
 <!DOCTYPE html>
 <html lang="es"> 
 
 <head> 
 
-    <title> ¿Quiénes Somos? | Market Mallorca </title>
-    
     <meta charset="UTF-8"> 
+
+    <title> ¿Quiénes Somos? | Market Mallorca </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--Descripción página-->
-    <meta name="description" content="Descubre el corazón de Market Mallorca en Ibagué: nuestra misión de calidad, la visión de servirte mejor y el equipo comprometido con la comunidad. ¡Conoce a las personas detrás de tus compras!"> 
+
+    <!--Page description-->
+    <meta name="description" content="Descubre el corazón de Market Mallorca: nuestra misión de calidad, la visión de servirte mejor y el equipo comprometido con la comunidad. ¡Conoce a las personas detrás de tus compras!"> 
 
 
     <!--CSS-->
-    <link rel="icon" href="../Assets/Images/IconLime.webp">
+    <link rel="icon" href="<?= BASE_URL ?>Assets/Images/IconLime.webp">
 
-    <link rel="stylesheet" href="../Assets/Fonts/Fonts.css"> 
+    <link rel="stylesheet" href="<?= BASE_URL ?>Assets/Fonts/Fonts.css"> 
 
     <link rel="stylesheet" href="Members.css"> 
 
-    <link rel="stylesheet" href="../Header/Header.css"> 
+    <link rel="stylesheet" href="<?= BASE_URL ?>Header/Header.css"> 
 
-    <link rel="stylesheet" href="../FooterPage/FooterPage.css"> 
+    <link rel="stylesheet" href="<?= BASE_URL ?>FooterPage/FooterPage.css"> 
 
 
     <!--URL Canónica-->
     <link rel="canonical" href="https://marketmallorca.com/Members/Members.php"> 
 
 
-    <!--Contenido ULRs-->
+    <!--Content URLs-->
     <meta property="og:title" content="¿Quiénes Somos? | Market Mallorca">  
+
+    <meta property="og:description" content="Descubre el corazón de Market Mallorca: nuestra misión de calidad, la visión de servirte mejor y el equipo comprometido con la comunidad. ¡Conoce a las personas detrás de tus compras!"> 
 
     <meta property="og:url" content="https://marketmallorca.com/Members/Members.php"> 
 
@@ -41,84 +49,17 @@
 
 <body> 
 
-    <!--Barra de navegación-->
-    <?php include '../Header/Header.php'; ?>
+    <!--Header-->
+    <?php 
+        require_once BASE_PATH . 'Header/Header.php'; 
+    ?>
     
 
-    <!--Encapsulado página-->
+    <!--Encapsulated Page-->
     <main class="Encapsulated-Page">
-
-        <!--Sección de miembros-->
-        <section> 
-            
-            <h2 class="Title-Members"> Miembros </h2>
-    
-            <div class="Section-Cards-Members"> 
-
-                <!--Cartas-->
-                <article class="Cards">
-
-                    <img src="../Assets/Images/Propietarios.webp" class="Member-Photos" alt="Foto de los Propietarios del Market Mallorca">
-
-                    <h3 class="Member-Position"> Propietarios </h3>
-
-                    <h4> Sthepania Ariza y Juan Pablo </h4>
-
-                    <p> Ambos lideran el market, asegurándose de que cada área funcione correctamente. Juntos, toman decisiones estratégicas y supervisan la calidad del servicio, garantizando una experiencia óptima para los clientes.                   
-                    </p>
-
-                </article>
-
-
-                <article class="Cards">
-
-                    <img src="../Assets/Images/Ana.webp" class="Member-Photos" alt="Foto de la Administradora Ana Caleño">
-
-                    <h3 class="Member-Position"> Administradora </h3>
-
-                    <h4> Ana Caleño </h4>
-
-                    <p> Se encarga de coordinar y gestionar las operaciones del market. Supervisa al equipo, administra inventarios y compras, y se asegura de que todo funcione eficientemente para ofrecer un servicio de calidad a los clientes.                      
-                    </p>
-
-                </article>
-
-
-                <article class="Cards">
-
-                    <img src="../Assets/Images/Gloria.webp" class="Member-Photos" alt="Foto de la coordinadora Gloria Loaiza">
-
-                    <h3 class="Member-Position"> Coordinadora </h3>
-
-                    <h4> Gloria Loaiza </h4>
-
-                    <p> Es la figura que garantiza la eficiencia de todas las operaciones diarias, desde la gestión de pedidos hasta la coordinación de entregas y la optimización de la experiencia del cliente. Su rol es clave para mantener la promesa de calidad y servicio que define a Market Mallorca. 
-                    </p>
-
-                </article>
-
-
-                <article class="Cards">
-
-                    <img src="../Assets/Images/Equipo.webp" class="Member-Photos" alt="Foto del Equipo de Trabajo: Cajeros y Domiciliarios.">
-
-                    <h3 class="Member-Position"> Cajeros y domiciliarios </h3>
-
-                    <h4> Equipo de Trabajo </h4>
-
-                    <p> Son el rostro amable en la línea de pago brindando una atención al cliente más directa, encargados de procesar las transacciones de manera eficiente.
-                    </p> 
-                    
-                    <p> Son el puente que conecta nuestro market con la comodidad de tu hogar. </p>
-
-                </article>
-
-            </div>
-
-        </section>
             
         
-        <!--Sección propósito-->
+        <!--Section Purpose-->
         <section> 
             
             <h2 class="Title-Purpose-Supermarket"> Razón de ser </h2>
@@ -148,24 +89,96 @@
 
         </section>
 
+
+        <section> 
+            
+            <h2 class="Title-Members"> Miembros </h2>
+    
+            <div class="Section-Cards-Members"> 
+
+                <!--Cards Members-->
+                <article class="Cards">
+
+                    <img src="<?= BASE_URL ?>Assets/Images/Propietarios.webp" class="Member-Photos" alt="Foto de los Propietarios del Market Mallorca">
+
+                    <h3> Sthepania Ariza y Juan Pablo </h3>
+
+                    <h4 class="Member-Position"> Propietarios </h4>
+
+                    <p> Ambos lideran el market, asegurándose de que cada área funcione correctamente. Juntos, toman decisiones estratégicas y supervisan la calidad del servicio, garantizando una experiencia óptima para los clientes.                   
+                    </p>
+
+                </article>
+
+
+                <article class="Cards">
+
+                    <img src="<?= BASE_URL ?>Assets/Images/Ana.webp" class="Member-Photos" alt="Foto de la Administradora Ana Caleño">
+
+                    <h3> Ana Caleño </h3>
+
+                    <h4 class="Member-Position"> Administradora </h4>
+
+                    <p> Se encarga de coordinar y gestionar las operaciones del market. Supervisa al equipo, administra inventarios y compras, y se asegura de que todo funcione eficientemente para ofrecer un servicio de calidad a los clientes.                      
+                    </p>
+
+                </article>
+
+
+                <article class="Cards">
+
+                    <img src="<?= BASE_URL ?>Assets/Images/Gloria.webp" class="Member-Photos" alt="Foto de la coordinadora Gloria Loaiza">
+                    
+                    <h3> Gloria Loaiza </h3>
+                    
+                    <h4 class="Member-Position"> Coordinadora </h4>
+
+                    <p> Es la figura que garantiza la eficiencia de todas las operaciones diarias, la gestión de pedidos y la optimización de la experiencia del cliente. Su rol es clave para mantener la promesa de calidad y servicio que define a Market Mallorca. 
+                    </p>
+
+                </article>
+
+
+                <article class="Cards">
+
+                    <img src="<?= BASE_URL ?>Assets/Images/Equipo.webp" class="Member-Photos" alt="Foto del Equipo de Trabajo: Cajeros y Domiciliarios.">
+
+                    <h3> Equipo de Trabajo </h3>
+
+                    <h4 class="Member-Position"> Cajeros y domiciliarios </h4>
+
+                    <p> Son el rostro amable en la línea de pago brindando una atención al cliente más directa, encargados de procesar las transacciones de manera eficiente. Siendo tambien el puente que conecta nuestro market con la comodidad de tu hogar. 
+                    </p> 
+                    
+                </article>
+
+            </div>
+
+        </section>
+
     </main> 
 
 
-    <!--Pie de página-->
-    <?php include '../FooterPage/FooterPage.php' ?>
+    <!--Footer-->
+    <?php 
+        require_once BASE_PATH . 'FooterPage/FooterPage.php' 
+    ?>
 
-
-    <!--Scripts-->
-    <script src="../Scripts/Tween-Members.js" defer></script>
 
     <!--Enlace Gsap-->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" ></script> 
 
     <!--Enlace SplitText-->
-    <Script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" ></Script>
+    <Script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" ></script>
 
     <!--Enlace ScrollTrigger-->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script> 
+
+    <!--Enlace TweenTitles-->
+    <script src="<?= BASE_URL ?>Scripts/Tween-Titles.js" defer></script>
+
+    <!--Enlace TweenHeader-->
+    <script src="<?= BASE_URL ?>Scripts/Tween-Header.js" defer></script>
 
 </body>
 

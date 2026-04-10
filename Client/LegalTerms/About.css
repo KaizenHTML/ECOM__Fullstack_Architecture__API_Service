@@ -1,54 +1,46 @@
 body{
 
-    background: #000c;
+    font-family: "Outfit";
 
-    font-family: "Afo"
+    background: #003366
 }
 
 
 p, .Phrase{
 
-    font-size: 1.3rem
+    font-size: 1.1rem
 }
 
 
-/* Encabezado página----------------------------------------------------------------------------------*/
+/* Encapsulated Page----------------------------------------------------------------------------------*/
 
 .Encapsulated-Page{
 
-    background: #f8f9f9 ;
-
-    border: 0.6rem groove #e2e7ec;
-
-    border-radius: .5rem;
-
     width: 80%;
-
-    padding: 3.5%;
 
     margin: auto;
 
+    padding: 3.5%;
+
     margin-top: 5%;
 
-    margin-bottom: 5%
+    margin-bottom: 5%;
+
+    border-radius: .75rem;
+
+    background: #ffffff;
+
+    border: 1px #e1e4e8 solid;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 
-/* Contenido página-----------------------------------------------------------------------------------*/
+/* Content Page--------------------------------------------------------------------------------------*/
 
 h1{
 
-    font-size: 3rem;
-
-    text-shadow: 0 0 0.1rem #000
-}
-
-
-.Intro-Paragraph{
-
-    font-size: 1.7rem;
-
-    margin-top: 3rem
+    font-size: 3rem
 }
 
 

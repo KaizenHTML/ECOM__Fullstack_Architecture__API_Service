@@ -1,40 +1,38 @@
 require('dotenv').config(); 
-
-const { Pool } = require('pg');
-
-
-// Obteniendo credenciales
-const { 
-    PG_HOST: host,
-    PG_PORT: port, 
-    PG_DATABASE: database,
-    PG_USER: user,
-    PG_PASSWORD: password
-
-} = process.env;
+const {Pool} = require('pg');
 
 
-// Grupo conexiones
+// Get Credentials From The Database
+const config = {
+    db: {
+        host: process.env.PG_HOST,
+        port: process.env.PG_PORT || 5432,
+        database: process.env.PG_DATABASE,
+        user: process.env.PG_USER,
+        password: process.env.PG_PASSWORD,
+    },
+};
+
+
+// Connection Pool
 const pool = new Pool ({
-    host, 
-    port, 
-    database, 
-    user, 
-    password: password || '', 
+    ...config.db,
 
+    max: 20,
     idleTimeoutMillis: 30000,
+    connectionTimeoutMillis: 2000,
 });
 
 
-// Usando conexiones
-pool.connect((err, _client, release) => {
-
-    if (err) {
-        return console.error('Error al conectar a PostgreSQL:', err.stack);
-    }
-    console.log('Conexión exitosa a PostgreSQL.');
-    release();
-});
+// Using connections
+pool.connect()
+    .then(client => {
+        console.log('Conexión exitosa a PostgreSQL.');
+        client.release();
+    }) 
+    .catch(err => {
+        console.error('Error crítico al conectar a PostgreSQL:', err.message);
+    });
 
 
 module.exports = pool;
